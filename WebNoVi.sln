@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebNoVi", "WebNoVi\WebNoVi.csproj", "{939D0A09-37D1-48F1-B628-1B51C7D2254A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebNoVi.Tests", "WebNoVi.Tests\WebNoVi.Tests.csproj", "{D30AB91E-034B-4E3F-A65C-CC876B65136C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{939D0A09-37D1-48F1-B628-1B51C7D2254A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939D0A09-37D1-48F1-B628-1B51C7D2254A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939D0A09-37D1-48F1-B628-1B51C7D2254A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939D0A09-37D1-48F1-B628-1B51C7D2254A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30AB91E-034B-4E3F-A65C-CC876B65136C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30AB91E-034B-4E3F-A65C-CC876B65136C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30AB91E-034B-4E3F-A65C-CC876B65136C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30AB91E-034B-4E3F-A65C-CC876B65136C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6267D793-58F8-4739-B30E-00AD53877ABB}
+	EndGlobalSection
+EndGlobal
