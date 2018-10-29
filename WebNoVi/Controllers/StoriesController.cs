@@ -46,7 +46,7 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StoryId,Title,Date,Description,Body")] Story story)
+        public ActionResult Create([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StoryId,Title,Date,Description,Body")] Story story)
+        public ActionResult Edit([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +111,13 @@ namespace WebNoVi.Controllers
         {
             Story story = db.Stories.Find(id);
             db.Stories.Remove(story);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+            }
             return RedirectToAction("Index");
         }
 

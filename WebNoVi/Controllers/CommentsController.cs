@@ -48,7 +48,7 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CommentId,UserName,Date,Body,Mail,StoryId")] Comment comment)
+        public ActionResult Create([Bind(Include = "CommentId,UserName,Date,Hour,Body,Mail,StoryId")] Comment comment)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CommentId,UserName,Date,Body,Mail,StoryId")] Comment comment)
+        public ActionResult Edit([Bind(Include = "CommentId,UserName,Date,Hour,Body,Mail,StoryId")] Comment comment)
         {
             if (ModelState.IsValid)
             {
