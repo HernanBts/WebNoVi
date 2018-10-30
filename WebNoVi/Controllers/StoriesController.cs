@@ -15,12 +15,14 @@ namespace WebNoVi.Controllers
         private CenoviContext db = new CenoviContext();
 
         // GET: Stories
+        [Authorize(Roles = "View")]
         public ActionResult Index()
         {
             return View(db.Stories.ToList());
         }
 
         // GET: Stories/Details/5
+        [Authorize(Roles = "View")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: Stories/Create
+        [Authorize(Roles = "Create")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +62,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: Stories/Edit/5
+        [Authorize(Roles = "Edit")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +94,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: Stories/Delete/5
+        [Authorize(Roles = "Delete")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
