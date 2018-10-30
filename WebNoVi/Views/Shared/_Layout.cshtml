@@ -6,9 +6,26 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    
 
 </head>
 <body>
+
+    <div class="buttonrightsidebar">
+        <a href="#accesibilidad" onclick="openNav()">
+            <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+        </a>
+
+        <div id="mySidenav" class="rightsidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Veo Bien</a>
+            <a href="#">Veo Mal</a>
+            <a href="#">No Veo :(</a>
+            <a href="#">Me molestan los colores y la felicidad</a>
+        </div>
+    </div>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
