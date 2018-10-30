@@ -11,6 +11,7 @@ using WebNoVi.ModelView;
 
 namespace WebNoVi.Controllers
 {
+    [Authorize(Roles = "SuperUser")]
     public class UsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

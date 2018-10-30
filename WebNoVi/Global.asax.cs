@@ -39,6 +39,10 @@ namespace WebNoVi
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
             var user = userManager.FindByName("superuser@admin.com");
+            if (!userManager.IsInRole(user.Id, "SuperUser"))
+            {
+                userManager.AddToRole(user.Id, "SuperUser");
+            }
             if (!userManager.IsInRole(user.Id, "View"))
             {
                 userManager.AddToRole(user.Id, "View");
@@ -77,7 +81,11 @@ namespace WebNoVi
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
-            if(!roleManager.RoleExists("View"))
+            if (!roleManager.RoleExists("SuperUser"))
+            {
+                roleManager.Create(new IdentityRole("SuperUser"));
+            }
+            if (!roleManager.RoleExists("View"))
             {
                 roleManager.Create(new IdentityRole("View"));
             }
