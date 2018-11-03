@@ -6,11 +6,13 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
-    
+    @Scripts.Render("~/bundles/bootstrap")
+
 
 </head>
 <body>
+
+
 
     <div class="buttonrightsidebar">
         <a href="#accesibilidad" onclick="openNav()">
@@ -19,40 +21,46 @@
 
         <div id="mySidenav" class="rightsidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Veo Bien</a>
-            <a href="#">Veo Mal</a>
-            <a href="#">No Veo :(</a>
-            <a href="#">Me molestan los colores y la felicidad</a>
+            <a href="#">Fuente Grande</a>
+            <a href="#">Fuene Normal</a>
+            <a href="#">Modo alto Contraste</a>
+            <a href="#">Modo de contraste regular</a>
+            <a href="#">Links en color amarillo</a>
+            <a href="#">Links de color normal</a>
+            <a href="#">Modo en escala de grises</a>
+            <a href="#">Modo de colores regulares</a>
+            <a href="#">Links subrayados</a>
+            <a href="#">Links por defecto</a>
         </div>
     </div>
 
     <div class="sidebar">
-        <a href="#accesibilidad">
-            <img src="~/Images/cenovi.png" alt=" a inicio" />
+        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)">
+            <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
         </a>
-        <a class="active" href="#home">
+        <a class="active nav-button" href="#home">
             <img src="~/Images/Inicio.png" alt=" a inicio">
         </a>
-        <a href="#sobrenosotros">
+        <a href="#sobrenosotros" class="nav-button">
             <img src="~/Images/SobreNosotros.png" alt=" a inicio">
         </a>
-        <a href="#calendario">
+        <a href="#calendario" class="nav-button">
             <img src="~/Images/Calendario.png" alt=" a inico">
         </a>
-        <a href="#Herramientas">
+        <a href="#herramientas" class="nav-button">
             <img src="~/Images/HerryApps.png" alt=" a is: 50%">
         </a>
-        <a href="#voluntariado">
-            <img src="~/Images/voluntariado.png" alt=" a inicio">
+        <a href="#voluntariado" class="nav-button">
+            <img src="~/Images/voluntariado.png" alt=" a voluntariado">
         </a>
-        <a href="#about">
+        <a href="#about" class="nav-button">
             <img src="~/Images/contactanos.png" alt=" a inicio">
         </a>
     </div>
 
 
 
-    @*<div class="navbar sidebar">
+    *<div class="navbar sidebr">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -73,7 +81,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>*@
+    </div>
     <div class="container body-content content">
         @RenderBody()
         <hr />
@@ -83,7 +91,29 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $("a.añadir").click(function () {
+                $("p").addClass("test");
+            });
+            $("a.quitar").click(function () {
+                $("p").removeClass("test");
+            });
+            $('.nav-button').click(function (event) {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    window.location.hash = hash;
+                });
+            });
+            
+        });
+
+    </script>
+
 </body>
 </html>

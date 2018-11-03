@@ -35,3 +35,22 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+$(document).ready(function () {
+    $("a.añadir").click(function () {
+        $("p").addClass("test");
+    });
+    $("a.quitar").click(function () {
+        $("p").removeClass("test");
+    });
+    $('.nav-button').click(function (event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+            window.location.hash = hash;
+        });
+    });
+});
