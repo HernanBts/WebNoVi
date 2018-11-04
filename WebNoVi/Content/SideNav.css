@@ -28,7 +28,7 @@
 .rightsidenav .closebtn {
     position: absolute;
     top: 0px;
-    right: 25px;
+    left: 25px;
     font-size: 36px;
     margin-left: 50px;
 }
@@ -42,21 +42,23 @@
             font-size: 18px;
     }
 }
-.buttonrightsidebar {
+.buttonlefthtsidebar {
     margin: 0;
     padding: 0;
     left: 0;
-    top: 50px;
+    top: 0;
     background-color: #f1f1f1;
     position: fixed;
     overflow: auto;
+    position: fixed;
 }
 
-    .buttonrightsidebar a img {
+    .accimg{
         border-radius: 15px;
-        background: #73AD21;
-        width: 80px;
-        height: 80px;
+        width: 5%;
+        height: 5%;
+        top:0;
+        right:0;
     }
 
 
@@ -68,7 +70,7 @@
     width: 115px;
     background-color: #f1f1f1;
     position: fixed;
-    height: 100%;
+    height: 86%;
     overflow: auto;
 }    /* Sidebar links */
 
@@ -100,9 +102,9 @@
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-    margin-left: 200px;
+    margin-left: 150px;
     padding: 1px 16px;
-    height: 1000px;
+    height: auto;
 }
 
 
@@ -114,9 +116,9 @@ div.content {
         position: relative;
     }
 
-        .sidebar a {
-            float: left;
-        }
+    .sidebar a {
+        float: left;
+    }
 
     div.content {
         margin-left: 0;
@@ -131,3 +133,11 @@ div.content {
     }
 }
 
+.logo{
+    width: 80px;
+    height: 80px;
+}
+
+.rubik {
+    right:0;
+}

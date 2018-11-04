@@ -14,9 +14,9 @@
 
 
 
-    <div class="buttonrightsidebar">
+    <div class="buttonleftsidebar">
         <a href="#accesibilidad" onclick="openNav()">
-            <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+            <img src="~/Images/accesibilidad.png" class="accimg" alt=" a inicio" />
         </a>
 
         <div id="mySidenav" class="rightsidenav">
@@ -60,7 +60,7 @@
 
 
 
-    *<div class="navbar sidebr">
+    @*<div class="navbar sidebr">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -81,14 +81,24 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container body-content content">
+    </div>*@
+    <div class="container body-content">
         @RenderBody()
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+
+        <a href="https://twitter.com/">
+            <img class="logo" src="~/Images/twitter.png" width=100% />
+        </a>
+        <a href="https://facebook.com/">
+            <img class="logo" src="~/Images/facebook.png" width=100% />
+        </a>
+        <p class="rubik">Desarrollado por:</p>
+        <img src="~/Images/rubik.jpg"/>
+
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
@@ -110,7 +120,7 @@
                     window.location.hash = hash;
                 });
             });
-            
+
         });
 
     </script>
