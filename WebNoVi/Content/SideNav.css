@@ -10,6 +10,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    border-radius: 25px 0px 0px 25px ;
 }
 
 .rightsidenav a {
@@ -69,6 +70,7 @@
     position: fixed;
     height: 86%;
     overflow: auto;
+    border-radius: 0px 25px 25px 0px;
 }    /* Sidebar links */
 
 .sidebar a {
@@ -135,6 +137,7 @@ div.content {
     height: 80px;
 }
 
-.rubik{
-    right:0;    
+.rubiklogo{
+    right:0;
+    float:right;
 }
