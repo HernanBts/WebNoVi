@@ -43,8 +43,6 @@
     }
 }
 .buttonacctsidebar {
-    margin: 0;
-    padding: 0;
     right: 0;
     top: 0;
     background-color: #f1f1f1;
@@ -54,8 +52,8 @@
 
 .buttonacctsidebar img{
     border-radius: 15px;
-    width: 50%;
-    height: 50%;
+    width: 150px;
+    height: 150px;
     top: 0;
     right: 0;
 }
