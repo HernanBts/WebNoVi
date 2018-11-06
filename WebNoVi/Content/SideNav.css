@@ -42,24 +42,23 @@
             font-size: 18px;
     }
 }
-.buttonlefthtsidebar {
+.buttonacctsidebar {
     margin: 0;
     padding: 0;
-    left: 0;
+    right: 0;
     top: 0;
     background-color: #f1f1f1;
     position: fixed;
     overflow: auto;
-    position: fixed;
 }
 
-    .accimg{
-        border-radius: 15px;
-        width: 5%;
-        height: 5%;
-        top:0;
-        right:0;
-    }
+.buttonacctsidebar img{
+    border-radius: 15px;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    right: 0;
+}
 
 
 
@@ -138,6 +137,6 @@ div.content {
     height: 80px;
 }
 
-.rubik {
-    right:0;
+.rubik img {
+    
 }
