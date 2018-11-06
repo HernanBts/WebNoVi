@@ -24,7 +24,8 @@ namespace WebNoVi
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/sidenav.js",
                 "~/Scripts/bootstrap.js",
-                "~/Scripts/bootstrap.bundle.min.js"));
+                "~/Scripts/bootstrap.bundle.min.js",
+                "~/Scripts/popper.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
