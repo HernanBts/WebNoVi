@@ -4,45 +4,130 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("WebNoVi", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Noticias", "Index", "News")</li>
-                    <li>@Html.ActionLink("Historias", "Index", "Stories")</li>
-                    <li>@Html.ActionLink("Comentarios", "Index", "Comments")</li>
-                    <li>@Html.ActionLink("Usuarios", "Index", "Users")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+
+
+
+    <div class="buttonacctsidebar">
+        <a href="#accesibilidad" onclick="openNav()">
+            <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+        </a>
+
+        <div id="mySidenav" class="rightsidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Fuente Grande</a>
+            <a href="#">Fuene Normal</a>
+            <a href="#">Modo alto Contraste</a>
+            <a href="#">Modo de contraste regular</a>
+            <a href="#">Links en color amarillo</a>
+            <a href="#">Links de color normal</a>
+            <a href="#">Modo en escala de grises</a>
+            <a href="#">Modo de colores regulares</a>
+            <a href="#">Links subrayados</a>
+            <a href="#">Links por defecto</a>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+    <div class="sidebar">
+        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)"> 
+            <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
+        </a>
+        <a class="active nav-button" href="#home">
+            <img src="~/Images/Inicio.png" alt=" a inicio">
+        </a>
+        <a href="#sobrenosotros" class="nav-button">
+            <img src="~/Images/SobreNosotros.png" alt=" a inicio">
+        </a>
+        <a href="#calendario" class="nav-button">
+            <img src="~/Images/Calendario.png" alt=" a inico">
+        </a>
+        <a href="#herramientas" class="nav-button">
+            <img src="~/Images/HerryApps.png" alt=" a is: 50%">
+        </a>
+        <a href="#voluntariado" class="nav-button">
+            <img src="~/Images/voluntariado.png" alt=" a voluntariado">
+        </a>
+        <a href="#about" class="nav-button">
+            <img src="~/Images/contactanos.png" alt=" a inicio">
+        </a>
     </div>
 
+
+
+    @*<div class="navbar sidebr">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("WebNovi", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Historias", "Index", "Stories")</li>
+                        <li>@Html.ActionLink("Noticias", "Index", "News")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <div class="container body-content">
+        @RenderBody()
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+
+        <a href="https://twitter.com/">
+            <img class="logo" src="~/Images/twitter.png" width=100% />
+        </a>
+        <a href="https://facebook.com/">
+            <img class="logo" src="~/Images/facebook.png" width=100% />
+        </a>
+        <div class="rubiklogo">
+            <p>Desarrollado por:</p>
+            <img src="~/Images/rubik.jpg" />
+        </div>
+        <hr />
+
+    </div>
+
+
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $("a.añadir").click(function () {
+                $("p").addClass("test");
+            });
+            $("a.quitar").click(function () {
+                $("p").removeClass("test");
+            });
+            $('.nav-button').click(function (event) {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    window.location.hash = hash;
+                });
+            });
+
+        });
+
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
