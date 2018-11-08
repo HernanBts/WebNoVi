@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.carousel-item img{
+    width:650px;
+    height:550px;
+    border-radius:25px;
+}
