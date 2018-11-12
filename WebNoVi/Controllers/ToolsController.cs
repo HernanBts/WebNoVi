@@ -10,17 +10,17 @@ using WebNoVi.Models;
 
 namespace WebNoVi.Controllers
 {
-    public class StoriesController : Controller
+    public class ToolsController : Controller
     {
         private CenoviContext db = new CenoviContext();
 
-        // GET: Stories
+        // GET: Tools
         public ActionResult Index()
         {
-            return View(db.Stories.ToList());
+            return View(db.Tools.ToList());
         }
 
-        // GET: Stories/Details/5
+        // GET: Tools/Details/5
         [Authorize(Roles = "View")]
         public ActionResult Details(int? id)
         {
@@ -28,39 +28,39 @@ namespace WebNoVi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Story story = db.Stories.Find(id);
-            if (story == null)
+            Tool tool = db.Tools.Find(id);
+            if (tool == null)
             {
                 return HttpNotFound();
             }
-            return View(story);
+            return View(tool);
         }
 
-        // GET: Stories/Create
+        // GET: Tools/Create
         [Authorize(Roles = "Create")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Stories/Create
+        // POST: Tools/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
+        public ActionResult Create([Bind(Include = "ToolId,Title,Description,Link")] Tool tool)
         {
             if (ModelState.IsValid)
             {
-                db.Stories.Add(story);
+                db.Tools.Add(tool);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(story);
+            return View(tool);
         }
 
-        // GET: Stories/Edit/5
+        // GET: Tools/Edit/5
         [Authorize(Roles = "Edit")]
         public ActionResult Edit(int? id)
         {
@@ -68,31 +68,31 @@ namespace WebNoVi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Story story = db.Stories.Find(id);
-            if (story == null)
+            Tool tool = db.Tools.Find(id);
+            if (tool == null)
             {
                 return HttpNotFound();
             }
-            return View(story);
+            return View(tool);
         }
 
-        // POST: Stories/Edit/5
+        // POST: Tools/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
+        public ActionResult Edit([Bind(Include = "ToolId,Title,Description,Link")] Tool tool)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(story).State = EntityState.Modified;
+                db.Entry(tool).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(story);
+            return View(tool);
         }
 
-        // GET: Stories/Delete/5
+        // GET: Tools/Delete/5
         [Authorize(Roles = "Delete")]
         public ActionResult Delete(int? id)
         {
@@ -100,28 +100,23 @@ namespace WebNoVi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Story story = db.Stories.Find(id);
-            if (story == null)
+            Tool tool = db.Tools.Find(id);
+            if (tool == null)
             {
                 return HttpNotFound();
             }
-            return View(story);
+            return View(tool);
         }
 
-        // POST: Stories/Delete/5
+        // POST: Tools/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Story story = db.Stories.Find(id);
-            db.Stories.Remove(story);
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (Exception ex) 
-            {
-            }
+            Tool tool = db.Tools.Find(id);
+            db.Tools.Remove(tool);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

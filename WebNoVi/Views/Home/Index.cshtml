@@ -1,37 +1,54 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@model  WebNoVi.ModelView.IndexSPAView
+
+@{
     ViewBag.Title = "Home Page";
 }
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
 
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Deslogearse</a></li>
+        </ul>
+    }
+}
 @*<div class="jumbotron" id="Home">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-<hr />*@
+    <hr />*@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Deslogearse</a></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -58,13 +75,159 @@
 </div>
 
 <div class="content">
+    <ul>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Deslogearse</a></li>
+    </ul>
     <h1>
-
         Bienvenidos al CE.NO.VI!
     </h1>
     <section id="home">
         <hr>
-        <h3>Inicio</h3>
+        <h3>Testimonios</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stories[1].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stories[1].Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stories[1].Hour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stories[1].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stories[1].Body)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Stories)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "../Stories/Edit", new { id = item.StoryId }) |
+                        @Html.ActionLink("Details", "../Stories/Details", new { id = item.StoryId }) |
+                        @Html.ActionLink("Delete", "../Stories/Delete", new { id = item.StoryId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <h3>Noticias</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Hour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Resume)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Body)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.News)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Resume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "../News/Edit", new { id = item.NewId }) |
+                            @Html.ActionLink("Details", "../News/Details", new { id = item.NewId }) |
+                            @Html.ActionLink("Delete", "../News/Delete", new { id = item.NewId })
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+
+        <h3>Herramientas</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Link)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Tools)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Link)
+                    </td>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "../Tools/Edit", new { id = item.ToolId }) |
+                            @Html.ActionLink("Details", "../Tools/Details", new { id = item.ToolId }) |
+                            @Html.ActionLink("Delete", "../Tools/Delete", new { id = item.ToolId })
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+
         <p class="texto">
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
             Fusce suscipit nisl ac urna iaculis eleifend. Mauris in diam efficitur,

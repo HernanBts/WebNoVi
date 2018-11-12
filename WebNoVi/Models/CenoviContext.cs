@@ -30,5 +30,7 @@ namespace WebNoVi.Models
         public System.Data.Entity.DbSet<WebNoVi.Models.Story> Stories { get; set; }
 
         public System.Data.Entity.DbSet<WebNoVi.Models.Comment> Comments { get; set; }
+
+        public System.Data.Entity.DbSet<WebNoVi.Models.Tool> Tools { get; set; }
     }
 }

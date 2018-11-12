@@ -213,6 +213,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\StoriesController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +226,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\New.cs" />
     <Compile Include="Models\Story.cs" />
+    <Compile Include="Models\Tool.cs" />
+    <Compile Include="ModelView\IndexSPAView.cs" />
     <Compile Include="ModelView\RoleView.cs" />
     <Compile Include="ModelView\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,6 +310,11 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Roles.cshtml" />
     <Content Include="Views\Users\AddRole.cshtml" />
+    <Content Include="Views\Tools\Create.cshtml" />
+    <Content Include="Views\Tools\Delete.cshtml" />
+    <Content Include="Views\Tools\Details.cshtml" />
+    <Content Include="Views\Tools\Edit.cshtml" />
+    <Content Include="Views\Tools\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

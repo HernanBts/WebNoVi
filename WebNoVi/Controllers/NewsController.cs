@@ -21,6 +21,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: News/Details/5
+        [Authorize(Roles = "View")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +37,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: News/Create
+        [Authorize(Roles = "Create")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +61,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: News/Edit/5
+        [Authorize(Roles = "Edit")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +93,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: News/Delete/5
+        [Authorize(Roles = "Delete")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
