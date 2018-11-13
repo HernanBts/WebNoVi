@@ -70,7 +70,7 @@ namespace WebNoVi
             {
                 user = new ApplicationUser
                 {
-                    UserName = "Superuser",
+                    UserName = "superuser@admin.com",
                     Email = "superuser@admin.com"
                 };
                 userManager.Create(user, "Super123.");
