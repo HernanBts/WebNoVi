@@ -53,8 +53,8 @@
 
 .buttonacctsidebar img{
     border-radius: 15px;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     top: 0;
     right: 0;
 }
@@ -140,4 +140,11 @@ div.content {
 .rubiklogo{
     right:0;
     float:right;
+}
+.btnadm {
+    margin-left: 50%;
+}
+
+.rubiklogo {
+    float: right;
 }

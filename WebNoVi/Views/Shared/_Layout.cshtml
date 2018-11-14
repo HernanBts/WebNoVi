@@ -36,10 +36,10 @@
     </div>
 
     <div class="sidebar">
-        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)">
+        <a href="@Url.Action("Index", "Home")" class="nav-button" onclick="changeClass(this)">
             <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
         </a>
-        <a class="active nav-button" href="#home">
+        <a class="active " href="#home">
             <img src="~/Images/Inicio.png" alt=" a inicio">
         </a>
         <a href="#sobrenosotros" class="nav-button">
@@ -120,13 +120,16 @@
 
 </body>
 <footer style="margin-left:20%; margin-right:20%">
-    <a href="https://twitter.com/">
-        <img class="logo" src="~/Images/twitter.png" width=100% />
-    </a>
-    <a href="https://facebook.com/">
-        <img class="logo" src="~/Images/facebook.png" width=100% />
-    </a>
-    <div class="btnadm" style="margin-right:50%">
+    <hr />
+    <div style="float:left">
+        <a href="https://twitter.com/">
+            <img class="logo" src="~/Images/twitter.png" width=100% />
+        </a>
+        <a href="https://facebook.com/">
+            <img class="logo" src="~/Images/facebook.png" width=100% />
+        </a>
+    </div>
+    <div class="btnadm">
         @Html.Partial("_LoginPartial")
     </div>
 
