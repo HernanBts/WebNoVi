@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
 
 
 </head>
-<body>
+<body >
 
 
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="sidebar">
-        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)"> 
+        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)">
             <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
         </a>
         <a class="active nav-button" href="#home">
@@ -83,21 +83,10 @@
                 </div>
             </div>
         </div>*@
-    <div class="container body-content">
+    <div class="contenido">
         @RenderBody()
         <p>&copy; @DateTime.Now.Year - Inicio</p>
 
-        <a href="https://twitter.com/">
-            <img class="logo" src="~/Images/twitter.png" width=100% />
-        </a>
-        <a href="https://facebook.com/">
-            <img class="logo" src="~/Images/facebook.png" width=100% />
-        </a>
-        <div class="rubiklogo">
-            <p>Desarrollado por:</p>
-            <img src="~/Images/rubik.jpg" />
-        </div>
-        <hr />
 
     </div>
 
@@ -130,4 +119,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
+<footer style="margin-left:20%; margin-right:20%">
+    <a href="https://twitter.com/">
+        <img class="logo" src="~/Images/twitter.png" width=100% />
+    </a>
+    <a href="https://facebook.com/">
+        <img class="logo" src="~/Images/facebook.png" width=100% />
+    </a>
+    <div class="btnadm" style="margin-right:50%">
+        @Html.Partial("_LoginPartial")
+    </div>
+
+    <div class="rubiklogo" style="float:right">
+        <p>Desarrollado por:</p>
+        <img src="~/Images/rubik.jpg" />
+    </div>
+</footer>
+
 </html>
