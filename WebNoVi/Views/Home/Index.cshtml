@@ -122,11 +122,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Body)
                     </td>
-                    <td>
-                        @Html.ActionLink("Edit", "../Stories/Edit", new { id = item.StoryId }) |
-                        @Html.ActionLink("Details", "../Stories/Details", new { id = item.StoryId }) |
-                        @Html.ActionLink("Delete", "../Stories/Delete", new { id = item.StoryId })
-                    </td>
                 </tr>
             }
 
@@ -177,14 +172,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Body)
                     </td>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <td>
-                            @Html.ActionLink("Edit", "../News/Edit", new { id = item.NewId }) |
-                            @Html.ActionLink("Details", "../News/Details", new { id = item.NewId }) |
-                            @Html.ActionLink("Delete", "../News/Delete", new { id = item.NewId })
-                        </td>
-                    }
                 </tr>
             }
         </table>
@@ -216,14 +203,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Link)
                     </td>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <td>
-                            @Html.ActionLink("Edit", "../Tools/Edit", new { id = item.ToolId }) |
-                            @Html.ActionLink("Details", "../Tools/Details", new { id = item.ToolId }) |
-                            @Html.ActionLink("Delete", "../Tools/Delete", new { id = item.ToolId })
-                        </td>
-                    }
                 </tr>
             }
         </table>
