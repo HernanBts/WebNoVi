@@ -11,7 +11,7 @@
 
 
 </head>
-<body >
+<body>
 
 
 
@@ -22,16 +22,16 @@
 
         <div id="mySidenav" class="rightsidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Fuente Grande</a>
-            <a href="#">Fuene Normal</a>
-            <a href="#">Modo alto Contraste</a>
-            <a href="#">Modo de contraste regular</a>
-            <a href="#">Links en color amarillo</a>
-            <a href="#">Links de color normal</a>
-            <a href="#">Modo en escala de grises</a>
-            <a href="#">Modo de colores regulares</a>
-            <a href="#">Links subrayados</a>
-            <a href="#">Links por defecto</a>
+            <a href="#" id="btnFuenteGrande">Fuente Grande</a>
+            <a href="#" id="btnFuenteNormal">Fuene Normal</a>
+            <a href="#" id="btnContrasteAlto">Modo alto Contraste</a>
+            <a href="#" id="btnContrasteNormal">Modo de contraste regular</a>
+            <a href="#" id="btnLinksAmarillos">Links en color amarillo</a>
+            <a href="#" id="btnLinksNormales">Links de color normal</a>
+            <a href="#" id="btnEscalaGrises">Modo en escala de grises</a>
+            <a href="#" id="btnEscalaNormal">Modo de colores regulares</a>
+            <a href="#" id="btnLinksSub">Links subrayados</a>
+            <a href="#" id="btnLinksSinSubs">Links por defecto</a>
         </div>
     </div>
 
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>*@
-    <div class="contenido">
+    <div class="contenido ">
         @RenderBody()
         <p>&copy; @DateTime.Now.Year - Inicio</p>
 
@@ -115,28 +115,26 @@
         });
 
     </script>
-
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <footer style="margin-left:20%; margin-right:20% ">
+        <hr />
+        <div style="float:left">
+            <a href="https://twitter.com/">
+                <img class="logo" src="~/Images/twitter.png" width=100% />
+            </a>
+            <a href="https://facebook.com/">
+                <img class="logo" src="~/Images/facebook.png" width=100% />
+            </a>
+        </div>
+        <div class="btnadm">
+            @Html.Partial("_LoginPartial")
+        </div>
+        <div class="rubiklogo" style="float:right">
+            <p>Desarrollado por:</p>
+            <img src="~/Images/rubik.jpg" />
+        </div>
+    </footer>
 </body>
-<footer style="margin-left:20%; margin-right:20%">
-    <hr />
-    <div style="float:left">
-        <a href="https://twitter.com/">
-            <img class="logo" src="~/Images/twitter.png" width=100% />
-        </a>
-        <a href="https://facebook.com/">
-            <img class="logo" src="~/Images/facebook.png" width=100% />
-        </a>
-    </div>
-    <div class="btnadm">
-        @Html.Partial("_LoginPartial")
-    </div>
-
-    <div class="rubiklogo" style="float:right">
-        <p>Desarrollado por:</p>
-        <img src="~/Images/rubik.jpg" />
-    </div>
-</footer>
 
 </html>
