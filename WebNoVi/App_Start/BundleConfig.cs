@@ -29,6 +29,7 @@ namespace WebNoVi
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/fonts/accesibilityfonts.css",
                       "~/Content/sidenav.css",
                       "~/Content/site.css"));
         }
