@@ -75,9 +75,6 @@
 </div>
 
 <div class="content">
-    <ul>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Deslogearse</a></li>
-    </ul>
     <h1>
         Bienvenidos al CE.NO.VI!
     </h1>
@@ -167,7 +164,7 @@
                         @Html.DisplayFor(modelItem => item.Resume)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Image)
+                        <img width="100" src="@Url.Action("getImage", "News", new { id=item.NewId })" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Body)
