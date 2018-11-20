@@ -36,7 +36,7 @@
     </div>
 
     <div class="sidebar">
-        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)"> 
+        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)">
             <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
         </a>
         <a class="active nav-button" href="#home">
@@ -85,25 +85,32 @@
         </div>*@
     <div class="container body-content">
         @RenderBody()
-        <p>&copy; @DateTime.Now.Year - Inicio</p>
-
-        <a href="https://twitter.com/">
-            <img class="logo" src="~/Images/twitter.png" width=100% />
-        </a>
-        <a href="https://facebook.com/">
-            <img class="logo" src="~/Images/facebook.png" width=100% />
-        </a>
-        <div class="rubiklogo">
-            <p>Desarrollado por:</p>
-            <img src="~/Images/rubik.jpg" />
-        </div>
-        <hr />
 
     </div>
 
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
+
+    <footer style="margin-left:20%;margin-right:20%; position:relative;">
+        <hr />
+        <div style="float:left">
+            <a href="https://twitter.com/">
+                <img class="logo" src="~/Images/twitter.png" width=100% />
+            </a>
+            <a href="https://facebook.com/">
+                <img class="logo" src="~/Images/facebook.png" width=100% />
+            </a>
+        </div>
+        <div class="btnadm">
+            @Html.Partial("_LoginPartial")
+        </div>
+        <div class="rubiklogo" style="position:absolute;top:0;">
+            <p>Desarrollado por:</p>
+            <img src="~/Images/rubik.jpg" />
+        </div>
+    </footer>
+
     <script>
         $(document).ready(function () {
             $("a.añadir").click(function () {
