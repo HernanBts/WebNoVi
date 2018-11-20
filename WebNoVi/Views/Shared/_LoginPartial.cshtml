@@ -5,7 +5,7 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav ">
+        <ul class="nav">
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
@@ -15,12 +15,11 @@
 }
 else
 {
-    <ul class="nav ">
+    <ul class="nav">
         @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
         <li>
-            <a href="@Url.Action("Login", "Account")" id="loginLink" title="List View" class="links">
-                <img alt="adminstrador" src="@Url.Content("~/Images/admin.png")">
-
+            <a href="@Url.Action("Login", "Account")" id="loginLink" title="Admin login">
+                <img alt="Ingresar Admin" src="@Url.Content("~/Images/admin.png")">
             </a>
         </li>
     </ul>

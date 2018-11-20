@@ -1,63 +1,69 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - CeNoVi</title>
-    
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/bootstrap")
-
+    <title>@ViewBag.title - CeNoVi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Template.css" rel="stylesheet" />
 
 </head>
-<body>
+<body class="w3-padding-large">
 
-    <div class="buttonacctsidebar">
-        <a href="#accesibilidad" onclick="openNav()">
-            <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+    @*<div class="buttonacctsidebar">
+            <a href="#accesibilidad" onclick="openNav()">
+                <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+            </a>
+
+            <div id="mySidenav" class="rightsidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="javascript:void(0)" id="btnFuenteGrande">Fuente Grande</a>
+                <a href="javascript:void(0)" id="btnFuenteNormal">Fuene Normal</a>
+                <a href="#">Modo alto Contraste</a>
+                <a href="#">Modo de contraste regular</a>
+                <a href="#">Links en color amarillo</a>
+                <a href="#">Links de color normal</a>
+                <a href="#">Modo en escala de grises</a>
+                <a href="#">Modo de colores regulares</a>
+                <a href="#">Links subrayados</a>
+                <a href="#">Links por defecto</a>
+            </div>
+        </div>*@
+
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <img src="~/Images/cenovi.png" style="width:100%" />
+        <a href="#accesibilidad" class="w3-bar-item w3-button w3-padding-large w3-black" onclick="changeClass(this)">
         </a>
+        <img src="~/Images/Inicio.png" style="width:100%">
+        <a class="active nav-button" href="#home">
+        </a>
+        <img src="~/Images/SobreNosotros.png" style="width:100%">
+        <a href="#sobrenosotros" class="nav-button">
+        </a>
+        <img src="~/Images/Calendario.png" style="width:100%">
+        <a href="#calendario" class="nav-button">
+        </a>
+        <img src="~/Images/HerryApps.png" style="width:100%">
+        <a href="#herramientas" class="nav-button">
+        </a>
+        <img src="~/Images/voluntariado.png" style="width:100%">
+        <a href="#voluntariado" class="nav-button">
+        </a>
+        <img src="~/Images/contactanos.png" style="width:100%">
+        <a href="#about" class="nav-button">
+        </a>
+    </nav>
 
-        <div id="mySidenav" class="rightsidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" id="btnFuenteGrande">Fuente Grande</a>
-            <a href="javascript:void(0)" id="btnFuenteNormal">Fuene Normal</a>
-            <a href="#">Modo alto Contraste</a>
-            <a href="#">Modo de contraste regular</a>
-            <a href="#">Links en color amarillo</a>
-            <a href="#">Links de color normal</a>
-            <a href="#">Modo en escala de grises</a>
-            <a href="#">Modo de colores regulares</a>
-            <a href="#">Links subrayados</a>
-            <a href="#">Links por defecto</a>
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
         </div>
     </div>
-
-    <div class="sidebar">
-        <a href="#accesibilidad" class="nav-button" onclick="changeClass(this)">
-            <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
-        </a>
-        <a class="active nav-button" href="#home">
-            <img src="~/Images/Inicio.png" alt=" a inicio">
-        </a>
-        <a href="#sobrenosotros" class="nav-button">
-            <img src="~/Images/SobreNosotros.png" alt=" a inicio">
-        </a>
-        <a href="#calendario" class="nav-button">
-            <img src="~/Images/Calendario.png" alt=" a inico">
-        </a>
-        <a href="#herramientas" class="nav-button">
-            <img src="~/Images/HerryApps.png" alt=" a is: 50%">
-        </a>
-        <a href="#voluntariado" class="nav-button">
-            <img src="~/Images/voluntariado.png" alt=" a voluntariado">
-        </a>
-        <a href="#about" class="nav-button">
-            <img src="~/Images/contactanos.png" alt=" a inicio">
-        </a>
-    </div>
-
-
 
     @*<div class="navbar sidebr">
             <div class="container">
@@ -81,35 +87,38 @@
                 </div>
             </div>
         </div>*@
-    <div class="container body-content">
+    <div id="main">
         @RenderBody()
-        
     </div>
 
+    <footer id="main">
+        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+            <div class="w3-quarter w3-section">
+                <a href="https://twitter.com/">
+                    <img class="fa fa-twitter w3-hover-opacity" src="~/Images/twitter.png" style="width:25%" />
+                </a>
+                <a href="https://facebook.com/">
+                    <img class="fa fa-facebook-official w3-hover-opacity" src="~/Images/facebook.png" style="width:25%" />
+                </a>
+                <p>&copy; @DateTime.Now.Year - Inicio</p>
+            </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+            <div class="w3-quarter w3-section">
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div class="w3-quarter w3-section">
 
-    <footer style="margin-left:20%;margin-right:20%; position:relative;">
-        <hr />
-        <div style="float:left">
-            <a href="https://twitter.com/">
-                <img class="logo" src="~/Images/twitter.png" width=100% />
-            </a>
-            <a href="https://facebook.com/">
-                <img class="logo" src="~/Images/facebook.png" width=100% />
-            </a>
-            <p>&copy; @DateTime.Now.Year - Inicio</p>
-        </div>
-        <div class="btnadm">
-            @Html.Partial("_LoginPartial")
-        </div>
-        <div class="rubiklogo" style="position:absolute;top:0;">
-            <p>Desarrollado por:</p>
-            <img src="~/Images/rubik.jpg" />
-        </div>
-
+            </div>
+            <div class="w3-quarter w3-section">
+                <p>Desarrollado por:</p>
+                <img src="~/Images/rubik.jpg" />
+                
+            </div>
+        </div>     
     </footer>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
 
     <script>
         $(document).ready(function () {
