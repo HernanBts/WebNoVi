@@ -239,6 +239,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\accesibilityfonts.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -249,6 +250,21 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\accesibilidad.png" />
+    <Content Include="Images\admin.png" />
+    <Content Include="Images\Calendario.png" />
+    <Content Include="Images\cenovi.png" />
+    <Content Include="Images\contactanos.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\HerryApps.png" />
+    <Content Include="Images\Inicio.png" />
+    <Content Include="Images\mailicon.png" />
+    <Content Include="Images\mapsicon.png" />
+    <Content Include="Images\phoneicon.png" />
+    <Content Include="Images\rubik.jpg" />
+    <Content Include="Images\SobreNosotros.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\voluntariado.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -326,7 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
