@@ -4,6 +4,7 @@
     <title>@ViewBag.title - CeNoVi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,28 +33,36 @@
             </div>
         </div>*@
 
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <nav class="w3-sidebar w3-small w3-hide-small w3-center" style="color:whitesmoke">
 
         <a href="@Url.Action("Index", "Home")" id="CeNoVi" title="Inicio - CeNoVi">
             <img src="@Url.Content("~/Images/cenovi.png")" style="width:100%">
         </a>
-        <a class="w3-bar-item w3-button w3-padding-large w3-hover-black" href="#home">
-            <img src="~/Images/Inicio.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
-        <a href="#sobrenosotros" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <img src="~/Images/SobreNosotros.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        <a href="#sobrenosotros" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/SobreNosotros.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-user fa-3x"></i>
+            <p>Nosotros</p>
         </a> 
-        <a href="#calendario" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <img src="~/Images/Calendario.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        <a href="#calendario" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/Calendario.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-calendar fa-3x"></i>
+            <p>Eventos</p>
         </a>
-        <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-toolbox fa-3x"></i>
+            <p>Apps y Her.</p>
         </a>
-        <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-coins fa-3x"></i>
+            <p>Donar</p>
         </a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <img src="~/Images/contactanos.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/contactanos.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-mail-bulk fa-3x"></i>
+            <p>Contacto</p>
         </a>
     </nav>
 
