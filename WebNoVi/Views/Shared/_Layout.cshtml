@@ -10,7 +10,7 @@
     <link href="~/Content/Template.css" rel="stylesheet" />
 
 </head>
-<body class="w3-padding-large">
+<body>
 
     @*<div class="buttonacctsidebar">
             <a href="#accesibilidad" onclick="openNav()">
@@ -33,26 +33,27 @@
         </div>*@
 
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <img src="~/Images/cenovi.png" style="width:100%" />
-        <a href="#accesibilidad" class="w3-bar-item w3-button w3-padding-large w3-black" onclick="changeClass(this)">
+
+        <a href="@Url.Action("Index", "Home")" id="CeNoVi" title="Inicio - CeNoVi">
+            <img src="@Url.Content("~/Images/cenovi.png")" style="width:100%">
         </a>
-        <img src="~/Images/Inicio.png" style="width:100%">
-        <a class="active nav-button" href="#home">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hover-black" href="#home">
+            <img src="~/Images/Inicio.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
-        <img src="~/Images/SobreNosotros.png" style="width:100%">
-        <a href="#sobrenosotros" class="nav-button">
+        <a href="#sobrenosotros" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img src="~/Images/SobreNosotros.png" style="width:100%" class="fa fa-user w3-xxlarge">
+        </a> 
+        <a href="#calendario" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img src="~/Images/Calendario.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
-        <img src="~/Images/Calendario.png" style="width:100%">
-        <a href="#calendario" class="nav-button">
+        <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
-        <img src="~/Images/HerryApps.png" style="width:100%">
-        <a href="#herramientas" class="nav-button">
+        <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
-        <img src="~/Images/voluntariado.png" style="width:100%">
-        <a href="#voluntariado" class="nav-button">
-        </a>
-        <img src="~/Images/contactanos.png" style="width:100%">
-        <a href="#about" class="nav-button">
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <img src="~/Images/contactanos.png" style="width:100%" class="fa fa-user w3-xxlarge">
         </a>
     </nav>
 
@@ -87,35 +88,39 @@
                 </div>
             </div>
         </div>*@
-    <div id="main">
-        @RenderBody()
+
+    <div class="w3-padding-large" id="main">
+        <div>
+            @RenderBody()
+        </div>
+
+        <footer>
+            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                <div class="w3-quarter w3-section">
+                    <a href="https://twitter.com/">
+                        <img class="fa fa-twitter w3-hover-opacity" src="~/Images/twitter.png" style="width:25%" />
+                    </a>
+                    <a href="https://facebook.com/">
+                        <img class="fa fa-facebook-official w3-hover-opacity" src="~/Images/facebook.png" style="width:25%" />
+                    </a>
+                    <p>&copy; @DateTime.Now.Year - Inicio</p>
+                </div>
+
+                <div class="w3-quarter w3-section">
+                    @Html.Partial("_LoginPartial")
+                </div>
+                <div class="w3-quarter w3-section">
+
+                </div>
+                <div class="w3-quarter w3-section">
+                    <p>Desarrollado por:</p>
+                    <img src="~/Images/rubik.jpg" />
+
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <footer id="main">
-        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-            <div class="w3-quarter w3-section">
-                <a href="https://twitter.com/">
-                    <img class="fa fa-twitter w3-hover-opacity" src="~/Images/twitter.png" style="width:25%" />
-                </a>
-                <a href="https://facebook.com/">
-                    <img class="fa fa-facebook-official w3-hover-opacity" src="~/Images/facebook.png" style="width:25%" />
-                </a>
-                <p>&copy; @DateTime.Now.Year - Inicio</p>
-            </div>
-
-            <div class="w3-quarter w3-section">
-                @Html.Partial("_LoginPartial")
-            </div>
-            <div class="w3-quarter w3-section">
-
-            </div>
-            <div class="w3-quarter w3-section">
-                <p>Desarrollado por:</p>
-                <img src="~/Images/rubik.jpg" />
-                
-            </div>
-        </div>     
-    </footer>
+    
 
     @*@Scripts.Render("~/bundles/jquery")*@
     @RenderSection("scripts", required: false)
