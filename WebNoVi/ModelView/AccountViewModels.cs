@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebNoVi.Models
+namespace WebNoVi.ModelView
 {
     public class ExternalLoginConfirmationViewModel
     {

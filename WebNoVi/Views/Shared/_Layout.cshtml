@@ -1,65 +1,94 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/bootstrap")
-
+    <title>@ViewBag.title - CeNoVi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Template.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/accessbutton.css"/>
 
 </head>
 <body>
 
-
-
     <div class="buttonacctsidebar">
         <a href="#accesibilidad" onclick="openNav()">
-            <img src="~/Images/accesibilidad.png" alt=" a inicio" />
+            <img src="~/Images/accesibilidad.png" width="100" height="100" alt=" a inicio" />
         </a>
 
+
         <div id="mySidenav" class="rightsidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" id="btnFuenteGrande" >Fuente Grande</a>
-            <a href="javascript:void(0)" id="btnFuenteNormal" >Fuene Normal</a>
-            <a href="#" id="btnContrasteAlto">Modo alto Contraste</a>
-            <a href="#" id="btnContrasteNormal">Modo de contraste regular</a>
-            <a href="#" id="btnLinksAmarillos">Links en color amarillo</a>
-            <a href="#" id="btnLinksNormales">Links de color normal</a>
-            <a href="#" id="btnEscalaGrises">Modo en escala de grises</a>
-            <a href="#" id="btnEscalaNormal">Modo de colores regulares</a>
-            <a href="#" id="btnLinksSub">Links subrayados</a>
-            <a href="#" id="btnLinksSinSubs">Links por defecto</a>
+            <a id="closemySidenav" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" id="btnFuenteGrande">Fuente Grande</a>
+            <a href="javascript:void(0)" id="btnFuenteNormal">Fuene Normal</a>
+            <a href="#">Modo alto Contraste</a>
+            <a href="#">Modo de contraste regular</a>
+            <a href="#">Links en color amarillo</a>
+            <a href="#">Links de color normal</a>
+            <a href="#">Modo en escala de grises</a>
+            <a href="#">Modo de colores regulares</a>
+            <a href="#">Links subrayados</a>
+            <a href="#">Links por defecto</a>
         </div>
     </div>
 
-    <div class="sidebar">
-        <a href="@Url.Action("Index", "Home")" class="nav-button" onclick="changeClass(this)">
-            <img src="~/Images/cenovi.png" class="inactive" alt="a inicio" />
+    <nav class="w3-sidebar w3-small w3-hide-small w3-center" style="color:whitesmoke">
+
+        <a href="@Url.Action("Index", "Home")" id="CeNoVi" title="Inicio - CeNoVi">
+            <img src="@Url.Content("~/Images/cenovi.png")" style="width:100%">
         </a>
-        <a class="active " href="#home">
-            <img src="~/Images/Inicio.png" alt=" a inicio">
+        <a href="#sobrenosotros" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/SobreNosotros.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-users fa-3x"></i>
+            <p>Nosotros</p>
         </a>
-        <a href="#sobrenosotros" class="nav-button">
-            <img src="~/Images/SobreNosotros.png" alt=" a inicio">
+        <a href="#calendario" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/Calendario.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-calendar fa-3x"></i>
+            <p>Eventos</p>
         </a>
-        <a href="#calendario" class="nav-button">
-            <img src="~/Images/Calendario.png" alt=" a inico">
+        <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-toolbox fa-3x"></i>
+            <p>Apps y Her.</p>
         </a>
-        <a href="#herramientas" class="nav-button">
-            <img src="~/Images/HerryApps.png" alt=" a is: 50%">
+        <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-coins fa-3x"></i>
+            <p>Donar</p>
         </a>
-        <a href="#voluntariado" class="nav-button">
-            <img src="~/Images/voluntariado.png" alt=" a voluntariado">
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/contactanos.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-mail-bulk fa-3x"></i>
+            <p>Contacto</p>
         </a>
-        <a href="#about" class="nav-button">
-            <img src="~/Images/contactanos.png" alt=" a inicio">
-        </a>
+    </nav>
+
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="@Url.Action("Index", "Home")" id="CeNoVi" title="Inicio - CeNoVi" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-home fa-2x"></i>
+            </a>
+            <a href="#sobrenosotros" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-user fa-2x"></i>
+            </a>
+            <a href="#calendario" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-calendar fa-2x"></i>
+            </a>
+            <a href="#herramientas" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-toolbox fa-2x"></i>
+            </a>
+            <a href="#voluntariado" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-coins fa-2x"></i>
+            </a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-mail-bulk fa-2x"></i>
+            </a>
+        </div>
     </div>
-
-
 
     @*<div class="navbar sidebr">
             <div class="container">
@@ -83,16 +112,43 @@
                 </div>
             </div>
         </div>*@
-    <div class="contenido">
-        @RenderBody()
-        <p>&copy; @DateTime.Now.Year - Inicio</p>
 
+    <div class="w3-padding-large" id="main">
+        <div>
+            @RenderBody()
+        </div>
 
+        <footer>
+            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                <div class="w3-quarter w3-section">
+                    <a href="https://twitter.com/">
+                        <img class="fa fa-twitter w3-hover-opacity" src="~/Images/twitter.png" style="width:25%" />
+                    </a>
+                    <a href="https://facebook.com/">
+                        <img class="fa fa-facebook-official w3-hover-opacity" src="~/Images/facebook.png" style="width:25%" />
+                    </a>
+                    <p>&copy; @DateTime.Now.Year - Inicio</p>
+                </div>
+                <div class="w3-quarter w3-section">
+
+                </div>
+
+                <div class="w3-quarter w3-section">
+                    @Html.Partial("_LoginPartial")
+                </div>
+
+                <div class="w3-quarter w3-section">
+                    <p>Desarrollado por:</p>
+                    <img src="~/Images/rubik.jpg" />
+                </div>
+            </div>
+        </footer>
     </div>
 
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
+
     <script>
         $(document).ready(function () {
             $("a.añadir").click(function () {
@@ -110,6 +166,20 @@
 
                     window.location.hash = hash;
                 });
+            });
+            $(".buttonacctsidebar").click(function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            });
+            $(".closebtn").click(function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            });
+
+            //fuentes
+            $("#btnFuenteGrande").click(function fuenteGrande() {
+                $(".contenido").addClass("big-font");
+            });
+            $("#btnFuenteNormal").click(function fuenteNormal() {
+                $(".contenido").removeClass("big-font");
             });
             //fuentes
             $("#btnFuenteGrande").click(function fuenteGrande() {

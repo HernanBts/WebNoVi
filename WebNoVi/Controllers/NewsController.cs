@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebNoVi.Models;
 
@@ -50,6 +54,12 @@ namespace WebNoVi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "NewId,Title,Resume,Hour,Body,Date,Image")] New @new)
         {
+            HttpPostedFileBase Filebase = Request.Files[0];
+
+            WebImage image = new WebImage(Filebase.InputStream);
+
+            @new.Image = image.GetBytes();
+
             if (ModelState.IsValid)
             {
                 db.News.Add(@new);
@@ -83,6 +93,17 @@ namespace WebNoVi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "NewId,Title,Resume,Hour,Body,Date,Image")] New @new)
         {
+            byte[] image = null;
+            HttpPostedFileBase Filebase = Request.Files[0];
+            if(Filebase == null)
+            {
+                image = db.News.SingleOrDefault(n => n.NewId == @new.NewId).Image;
+            }
+            else
+            {
+                WebImage wImage = new WebImage(Filebase.InputStream);
+                @new.Image = wImage.GetBytes();
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(@new).State = EntityState.Modified;
@@ -117,6 +138,21 @@ namespace WebNoVi.Controllers
             db.News.Remove(@new);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult getImage(int id)
+        {
+            New news = db.News.Find(id);
+            byte[] byteImage = news.Image;
+
+            MemoryStream memoryStream = new MemoryStream(byteImage);
+            Image image = Image.FromStream(memoryStream);
+
+            memoryStream = new MemoryStream();
+            image.Save(memoryStream, ImageFormat.Jpeg);
+            memoryStream.Position = 0;
+
+            return File(memoryStream, "image.jpeg");
         }
 
         protected override void Dispose(bool disposing)

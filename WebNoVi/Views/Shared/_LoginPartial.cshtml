@@ -5,23 +5,26 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav ">
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+        @*<li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>*@
+        <a a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="msjBtn" title="msj admin">
+            <i class="fas fa-user-edit fa-3x"></i>
+            <p>Mensajes</p>
+        </a>
+        <a href="javascript:document.getElementById('logoutForm').submit()" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            <i class="fas fa-user-tie fa-3x"></i>
+            <p>Salir</p>
+        </a>
+
     }
 }
 else
 {
-    <ul class="nav ">
-        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-        <li>
-            <a href="@Url.Action("Login", "Account")" id="loginLink" title="List View" class="links">
-                <img alt="adminstrador" src="@Url.Content("~/Images/admin.png")">
 
-            </a>
-        </li>
-    </ul>
+    @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+    <a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="loginBtn" title="Admin login">
+        <i class="fas fa-user-tie fa-3x"></i>
+        <p>Ingreso Admin</p>
+    </a>
 }

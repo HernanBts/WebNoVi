@@ -214,15 +214,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="ModelView\AccountViewModels.cs" />
     <Compile Include="Models\CenoviContext.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ModelView\ManageViewModels.cs" />
     <Compile Include="Models\New.cs" />
+    <Compile Include="Models\Query.cs" />
     <Compile Include="Models\Story.cs" />
     <Compile Include="Models\Tool.cs" />
+    <Compile Include="Models\Voluntary.cs" />
     <Compile Include="ModelView\IndexSPAView.cs" />
     <Compile Include="ModelView\RoleView.cs" />
     <Compile Include="ModelView\UserView.cs" />
@@ -230,8 +233,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Template.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\accesibilityfonts.css" />
     <Content Include="Global.asax" />
@@ -241,9 +247,27 @@
     </Content>
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\accesibilidad.png" />
+    <Content Include="Images\admin.png" />
+    <Content Include="Images\Calendario.png" />
+    <Content Include="Images\cenovi.png" />
+    <Content Include="Images\contactanos.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\HerryApps.png" />
+    <Content Include="Images\Inicio.png" />
+    <Content Include="Images\mailicon.png" />
+    <Content Include="Images\mapsicon.png" />
+    <Content Include="Images\phoneicon.png" />
+    <Content Include="Images\rubik.jpg" />
+    <Content Include="Images\SobreNosotros.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\voluntariado.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -318,6 +342,18 @@
     <Content Include="Views\Events\Details.cshtml" />
     <Content Include="Views\Events\Edit.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
