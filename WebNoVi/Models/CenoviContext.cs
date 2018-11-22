@@ -34,5 +34,11 @@ namespace WebNoVi.Models
         public System.Data.Entity.DbSet<WebNoVi.Models.Tool> Tools { get; set; }
 
         public System.Data.Entity.DbSet<WebNoVi.Models.Event> Events { get; set; }
+
+        public System.Data.Entity.DbSet<WebNoVi.Models.Query> Queries { get; set; }
+
+        public System.Data.Entity.DbSet<WebNoVi.Models.Voluntary> Voluntaries { get; set; }
+
+        public System.Data.Entity.DbSet<WebNoVi.Models.Donation> Donations { get; set; }
     }
 }

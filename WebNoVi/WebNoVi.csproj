@@ -209,13 +209,17 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\QueriesController.cs" />
     <Compile Include="Controllers\StoriesController.cs" />
     <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\VoluntariesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,6 +237,7 @@
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Voluntary.cs" />
     <Compile Include="ModelView\IndexSPAView.cs" />
+    <Compile Include="ModelView\MessageViewModel.cs" />
     <Compile Include="ModelView\RoleView.cs" />
     <Compile Include="ModelView\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -360,6 +365,22 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Queries\Create.cshtml" />
+    <Content Include="Views\Queries\Delete.cshtml" />
+    <Content Include="Views\Queries\Details.cshtml" />
+    <Content Include="Views\Queries\Edit.cshtml" />
+    <Content Include="Views\Queries\Index.cshtml" />
+    <Content Include="Views\Voluntaries\Create.cshtml" />
+    <Content Include="Views\Voluntaries\Delete.cshtml" />
+    <Content Include="Views\Voluntaries\Details.cshtml" />
+    <Content Include="Views\Voluntaries\Edit.cshtml" />
+    <Content Include="Views\Voluntaries\Index.cshtml" />
+    <Content Include="Views\Donations\Create.cshtml" />
+    <Content Include="Views\Donations\Delete.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Donations\Edit.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
