@@ -63,12 +63,13 @@
     </div>*@
 
 <div>
-    <h1>
-        Bienvenidos al CE.NO.VI!
+    <hr>
+    <h1 class="w3-row w3-center">
+        <span class="w3-hide-small">Bienvenidos al </span>CE.NO.VI!
     </h1>
     <hr>
-    <h3>Testimonios</h3>
     <section class="w3-row w3-center w3-padding-16 w3-section">
+        <h3>Testimonios</h3>
         <table class="table w3-light-grey">
             <tr>
                 <th>
@@ -111,7 +112,6 @@
             }
 
         </table>
-
         <h3>Noticias</h3>
         <table class="table w3-light-grey">
             <tr>
@@ -160,7 +160,6 @@
                 </tr>
             }
         </table>
-
         <h3>Herramientas</h3>
         <table class="table w3-light-grey">
             <tr>
@@ -194,6 +193,7 @@
     </section>
 
     <section id="home">
+        <hr>
         <p class="texto">
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
             Fusce suscipit nisl ac urna iaculis eleifend. Mauris in diam efficitur,
@@ -242,8 +242,9 @@
             nulla.
         </p>
     </section>
-    <hr>
-    <section id="sobrenosotros">
+
+    <section id="sobrenosotros" class="w3-padding-large w3-content w3-light-grey">
+        <hr>
         <h3>Sobre Nosotros</h3>
         <p>
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
@@ -293,8 +294,8 @@
             nulla.
         </p>
     </section>
-    <hr>
     <section id="calendario">
+        <hr>
         <h3>Calendario</h3>
         <p>
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
@@ -344,8 +345,8 @@
             nulla.
         </p>
     </section>
-    <hr>
-    <section id="herramientas">
+    <section id="herramientas" class="w3-padding-large w3-content w3-light-grey">
+        <hr>
         <h3>Herramientas y Aplicaciones</h3>
         <p>
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
@@ -395,8 +396,8 @@
             nulla.
         </p>
     </section>
-    <hr>
     <section id="voluntariado">
+        <hr>
         <h3>Voluntariado</h3>
         <p>
             Donec volutpat et ex at convallis. Duis ultricies rutrum imperdiet.
@@ -446,7 +447,32 @@
             nulla.
         </p>
     </section>
-    <hr>
+    <section>
+        <div class="w3-padding-large w3-content w3-light-grey" id="contact">
+            <h2>Contactanos</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Resistencia, Chaco</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Telefono: 362-4 444333</p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: cenovi@gmail.com</p>
+            </div><br>
+            <p>Rellena el formulario para una consulta:</p>
+
+            <form action="/action_page.php" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Asunto" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Mensaje" required name="Message"></p>
+                <p>
+                    <button class="w3-button w3-black w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </p>
+            </form>
+            <!-- End Contact Section -->
+        </div>
+    </section>
 </div>
 
 
