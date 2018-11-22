@@ -6,11 +6,14 @@
         @Html.AntiForgeryToken()
 
         @*<li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>*@
-
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>*@
+        <a a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="msjBtn" title="msj admin">
+            <i class="fas fa-user-edit fa-3x"></i>
+            <p>Mensajes</p>
+        </a>
         <a href="javascript:document.getElementById('logoutForm').submit()" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-            <i class="fa fa-user-tie fa-3x"></i>
+            <i class="fas fa-user-tie fa-3x"></i>
             <p>Salir</p>
         </a>
 
@@ -20,7 +23,7 @@ else
 {
 
     @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-    <a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="loginLink" title="Admin login">
+    <a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="loginBtn" title="Admin login">
         <i class="fas fa-user-tie fa-3x"></i>
         <p>Ingreso Admin</p>
     </a>
