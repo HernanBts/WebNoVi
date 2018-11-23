@@ -57,3 +57,13 @@
         top: 0;
         right: 0;
     }
+
+
+
+.fuentegrande p {
+    font-size: 25px;
+}
+
+.fuentegrande h1 {
+    font-size: 45px;
+}

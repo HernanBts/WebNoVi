@@ -22,8 +22,8 @@
 
         <div id="mySideAcc" class="rightsideAcc">
             <a href="javascript:void(0)" id="closemySideAcc" class="closebtn"  onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" id="btnFuenteGrande">Fuente Grande</a>
-            <a href="javascript:void(0)" id="btnFuenteNormal">Fuente Normal</a>
+            <a href="javascript:void(0)" id="btnFuenteGrande" onclick="añadirFuenteGrande()">Fuente Grande</a>
+            <a href="javascript:void(0)" id="btnFuenteNormal" onclick="añadirFuenteNormal()">Fuente Normal</a>
             <a href="#">Modo alto Contraste</a>
             <a href="#">Modo de contraste regular</a>
             <a href="#">Links en color amarillo</a>
@@ -159,12 +159,17 @@
             else {
                 e.style.width = '250px';
             }
-            console.log("Holis");
-        }
+                   }
 
         //document.getElementById("closemySidenav").addEventListener("click",closeNav);
-                function closeNav() {
+        function closeNav() {
             document.getElementById("mySideAcc").style.width = "0";
+        }
+        function añadirFuenteGrande() {
+            document.getElementById("content").classList.add("fuentegrande");
+        }
+        function añadirFuenteNormal() {
+            document.getElementById("content").classList.remove("fuentegrande");
         }
 
         $(document).ready(function () {
