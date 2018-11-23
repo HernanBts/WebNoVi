@@ -1,5 +1,5 @@
 ﻿    /* Right accesibility button*/
-   .rightsidenav{
+   .rightsideAcc{
     height: 70%;
     width: 0;
     position: fixed;
@@ -13,7 +13,7 @@
     border-radius: 25px 0px 0px 25px;
 }
 
-.rightsidenav a {
+.rightsideAcc a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
@@ -22,11 +22,11 @@
     transition: 0.3s;
 }
 
-    .rightsidenav a:hover {
+    .rightsideAcc a:hover {
         color: #f1f1f1;
     }
 
-.rightsidenav .closebtn {
+.rightsideAcc .closebtn {
     position: absolute;
     top: 0px;
     left: 25px;
@@ -35,11 +35,11 @@
 }
 
 @media screen and (max-height: 450px) {
-    .rightsidenav {
+    .rightsideAcc {
         padding-top: 15px;
     }
 
-        .rightsidenav a {
+        .rightsideAcc a {
             font-size: 18px;
         }
 }
