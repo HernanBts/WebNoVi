@@ -21,6 +21,14 @@
     display: block;
     transition: 0.3s;
 }
+    .rightsideAcc a.active-accesibility {
+        padding: 8px 8px 8px 32px;
+        text-decoration: underline;
+        font-size: 20px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
 
     .rightsideAcc a:hover {
         color: #f1f1f1;

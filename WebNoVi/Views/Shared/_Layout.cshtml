@@ -21,9 +21,10 @@
 
 
         <div id="mySideAcc" class="rightsideAcc">
-            <a href="javascript:void(0)" id="closemySideAcc" class="closebtn"  onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" id="closemySideAcc" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="active-accesibility" id="btnFuenteNormal" onclick="añadirFuenteNormal()">Fuente Normal</a>
             <a href="javascript:void(0)" id="btnFuenteGrande" onclick="añadirFuenteGrande()">Fuente Grande</a>
-            <a href="javascript:void(0)" id="btnFuenteNormal" onclick="añadirFuenteNormal()">Fuente Normal</a>
+
             <a href="#">Modo alto Contraste</a>
             <a href="#">Modo de contraste regular</a>
             <a href="#">Links en color amarillo</a>
@@ -162,14 +163,28 @@
                    }
 
         //document.getElementById("closemySidenav").addEventListener("click",closeNav);
+        function setActiveAccesibility() {
+            if (document.querySelector('#content').contains(document.querySelector('.fuentegrande'))) {
+                document.getElementById("btnFuenteGrande").classList.add("active-accesibility");
+                document.getElementById("btnFuenteNormal").classList.remove("active-accesibility");
+            }
+            else {
+                document.getElementById("btnFuenteGrande").classList.remove("active-accesibility");
+                document.getElementById("btnFuenteNormal").classList.add("active-accesibility");
+
+            }
+        }
+
         function closeNav() {
             document.getElementById("mySideAcc").style.width = "0";
         }
         function añadirFuenteGrande() {
             document.getElementById("content").classList.add("fuentegrande");
+            setActiveAccesibility();
         }
         function añadirFuenteNormal() {
             document.getElementById("content").classList.remove("fuentegrande");
+            setActiveAccesibility();
         }
 
         $(document).ready(function () {
