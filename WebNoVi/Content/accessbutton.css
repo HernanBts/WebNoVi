@@ -1,5 +1,5 @@
-﻿    /* Right accesibility button*/
-   .rightsideAcc{
+﻿/* Right accesibility button*/
+.rightsideAcc {
     height: 70%;
     width: 0;
     position: fixed;
@@ -13,34 +13,35 @@
     border-radius: 25px 0px 0px 25px;
 }
 
-.rightsideAcc a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-    .rightsideAcc a.active-accesibility {
+    .rightsideAcc a {
         padding: 8px 8px 8px 32px;
-        text-decoration: underline;
+        text-decoration: none;
         font-size: 20px;
-        color: white;
+        color: #818181;
         display: block;
         transition: 0.3s;
     }
 
-    .rightsideAcc a:hover {
-        color: #f1f1f1;
-    }
+        .rightsideAcc a.active-accesibility {
+            padding: 8px 8px 8px 32px;
+            text-decoration: underline;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
 
-.rightsideAcc .closebtn {
-    position: absolute;
-    top: 0px;
-    left: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
+        .rightsideAcc a:hover {
+            color: #f1f1f1;
+        }
+
+    .rightsideAcc .closebtn {
+        position: absolute;
+        top: 0px;
+        left: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
 
 @media screen and (max-height: 450px) {
     .rightsideAcc {
@@ -75,6 +76,54 @@
 .fuentegrande h1 {
     font-size: 45px;
 }
+
 .bold-headers h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+}
+
+/* Before */
+body-normal {
+    background: #fff;
+    color: #000;
+}
+
+a-normal {
+    color: #0b39e1;
+}
+
+/* After */
+body-high {
+    background: #000;
+    color: #fff;
+}
+
+a-high  {
+    color: #fcff3c;
+}
+/* Before */
+.h1-normal {
+    font-size: 48px;
+    margin: 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.p-normal {
+    font-size: 48px;
+    margin: 0 0 24px;
+}
+
+/* After */
+.h1-high {
+    color: #fff;
+    font-size: 48px;
+    margin: 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.p-high {
+    color: #fff;
+    font-size: 48px;
+    margin: 0 0 24px;
 }

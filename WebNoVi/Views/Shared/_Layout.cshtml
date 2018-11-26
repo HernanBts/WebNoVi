@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/Content/Template.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Content/accessbutton.css"/>
+    <link rel="stylesheet" href="~/Content/Template.css" />
+    <link rel="stylesheet" href="~/Content/accessbutton.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bigfishtv-turret/4.0.0/turret.min.css" crossorigin="anonymous">
+
 
 </head>
-<body>
+<body class="">
 
     <div id="accbut" class="buttonacctsidebar">
         <a  href="javascript:void(0)" onclick="openNav()">
@@ -22,11 +24,11 @@
 
         <div id="mySideAcc" class="rightsideAcc">
             <a href="javascript:void(0)" id="closemySideAcc" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" class="active-accesibility" id="btnFuenteNormal" onclick="añadirFuenteNormal()">Fuente Normal</a>
-            <a href="javascript:void(0)" id="btnFuenteGrande" onclick="añadirFuenteGrande()">Fuente Grande</a>
+            <a href="javascript:void(0)" class="active-accesibility" id="btnFuenteNormal" onclick="añadirFuenteNormal()">Fuente nomeal</a>
+            <a href="javascript:void(0)" id="btnFuenteGrande" onclick="añadirFuenteGrande()">Fuente grande</a>
+            <a href="javascript:void(0)" id="btnHighContrast" onclick="highContrast()">Contraste Negro</a>
+            <a href="javascript:void(0)" id="btnLowContrast" onclick="lowContrast()">Contraste Blanco</a>
 
-            <a href="#">Modo alto Contraste</a>
-            <a href="#">Modo de contraste regular</a>
             <a href="#">Links en color amarillo</a>
             <a href="#">Links de color normal</a>
             <a href="#">Modo en escala de grises</a>
@@ -54,7 +56,7 @@
         <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
             @*<img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
             <i class="fas fa-toolbox fa-3x"></i>
-            <p>Apps y Her.</p>
+            <p>Apps</p>
         </a>
         <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
             @*<img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
@@ -164,6 +166,12 @@
 
         //document.getElementById("closemySidenav").addEventListener("click",closeNav);
         function setActiveAccesibility() {
+            if (document.querySelector('#content').contains(document.querySelector('.highContrast'))) {
+                document.querySelector('body').classList.add('w3-black');
+            } else {
+                document.querySelector('body').classList.remove('w3-black');
+            }
+           
             if (document.querySelector('#content').contains(document.querySelector('.fuentegrande'))) {
                 document.getElementById("btnFuenteGrande").classList.add("active-accesibility");
                 document.getElementById("btnFuenteNormal").classList.remove("active-accesibility");
@@ -173,6 +181,7 @@
                 document.getElementById("btnFuenteNormal").classList.add("active-accesibility");
 
             }
+            closeNav();
         }
 
         function closeNav() {
@@ -186,7 +195,15 @@
             document.getElementById("content").classList.remove("fuentegrande");
             setActiveAccesibility();
         }
-
+        function highContrast() {
+            document.getElementById("content").classList.add("highContrast");
+            setActiveAccesibility();
+        }
+        function lowContrast() {
+            document.getElementById("content").classList.remove("highContrast");
+            setActiveAccesibility();
+        }
+        
         $(document).ready(function () {
             $("a.añadir").click(function () {
                 $("p").addClass("test");
@@ -212,12 +229,15 @@
             //});
 
             //fuentes
-            $("#btnFuenteGrande").click(function fuenteGrande() {
-                $(".contenido").addClass("big-font");
-            });
-            $("#btnFuenteNormal").click(function fuenteNormal() {
-                $(".contenido").removeClass("big-font");
-            });
+            //$("#btnFuenteGrande").click(function fuenteGrande() {
+            //    $(".contenido").addClass("big-font");
+            //});
+            //$("#btnFuenteNormal").click(function fuenteNormal() {
+            //    $(".contenido").removeClass("big-font");
+            //});
+            //$("#btnHighContrast").click(function highContrast() {
+            //    $(".contenido").addClass("body");
+            //});
         });
             
         

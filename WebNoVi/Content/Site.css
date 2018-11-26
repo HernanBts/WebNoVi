@@ -33,3 +33,47 @@ textarea {
     height:550px;
     border-radius:25px;
 }
+
+.div-high {
+    background: #000;
+    color: #fff;
+}
+
+.a.high {
+    color: #fcff3c;
+}
+
+.h1.high {
+    color: #fff;
+    font-size: 48px;
+    margin: 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.p.high {
+    color: #fff;
+    font-size: 48px;
+    margin: 0 0 24px;
+}
+
+.body-normal {
+    background: #fff;
+    color: #000;
+}
+
+.a-normal {
+    color: #0b39e1;
+}
+
+.h1-normal {
+    font-size: 48px;
+    margin: 0;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.p-normal {
+    font-size: 48px;
+    margin: 0 0 24px;
+}
