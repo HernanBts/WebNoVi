@@ -1,0 +1,156 @@
+﻿@model  WebNoVi.ModelView.MessageViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mensajes para el Admin...</h2>
+
+<section class="w3-row w3-center">
+    <h3>Consultas</h3>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries[1].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries[1].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries[1].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries[1].Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Queries[1].Message)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Stories[1].Body)
+        </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Queries)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>*@
+        </tr>
+        }
+
+    </table>
+    <h3>Noticias</h3>
+    <table class="table w3-light-grey">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntaries[1].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntaries[1].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntaries[1].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntaries[1].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voluntaries[1].Message)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.News[1].Body)
+        </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Voluntaries)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.VoluntaryId })
+            </td>
+        </tr>
+        }
+    </table>
+    <h3>Herramientas</h3>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Donations[1].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donations[1].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donations[1].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donations[1].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Donations[1].Message)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Donations)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.DonationId })
+            </td>
+        </tr>
+        }
+    </table>
+</section>
+

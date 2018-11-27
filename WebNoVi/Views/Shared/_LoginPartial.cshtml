@@ -8,7 +8,8 @@
         @*<li>
                     @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>*@
-        <a a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="msjBtn" title="msj admin">
+        <p>Panel administrador:</p>
+        <a a href="@Url.Action("Index", "Message")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="msjBtn" title="msj admin">
             <i class="fas fa-user-edit fa-3x"></i>
             <p>Mensajes</p>
         </a>
