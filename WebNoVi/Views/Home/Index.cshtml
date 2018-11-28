@@ -62,7 +62,7 @@
         </a>
     </div>*@
 
-<div id="content">
+<div>
 
     <h1 class="w3-row w3-center">
         <span class="w3-hide-small">Bienvenidos al </span>CE.NO.VI!
@@ -430,6 +430,58 @@
     </section>
     <section>
         <div class="w3-padding-large w3-content w3-light-grey" id="contact">
+            <h2>Voluntariado</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>Rellena el formulario para ofrecerse como voluntario:</p>
+            @using (Html.BeginForm())
+            {
+                <form action="/action_page.php" target="_blank">
+                    <p><input id="volutaryName" class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="Name"></p>
+                    <p><input id="volutaryEmail" class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input id="volutaryPhone" class="w3-input w3-padding-16" type="text" placeholder="Telefono" required name="Subject"></p>
+                    <p><input id="volutaryMessage" class="w3-input w3-padding-16" type="text" placeholder="Mensaje descriptivo" required name="Message"></p>
+                    <p>
+                        <button id="btnAddVoluntary" class="w3-button w3-black w3-padding-large" type="submit">
+                            <i class="fa fa-paper-plane"></i> Enviar
+                        </button>
+                    </p>
+                </form>
+            }
+            <div id="volutaryLblMessage"></div>
+            <div id="loading">
+                <img src="~/Images/loader.gif" />
+            </div>
+            <!-- End Contact Section -->
+        </div>
+    </section>
+    <section>
+        <div class="w3-padding-large w3-content w3-light-grey">
+            <h2>Donaciones</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>Rellena el formulario para donar y que nos pongamos en contacto:</p>
+            @using (Html.BeginForm())
+            {
+                <form action="/action_page.php" target="_blank">
+                    <p><input id="donationName" class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="Name"></p>
+                    <p><input id="donationEmail" class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input id="donationAmount" class="w3-input w3-padding-16" type="text" placeholder="Monto" required name="Amount"></p>
+                    <p><input id="donationMessage" class="w3-input w3-padding-16" type="text" placeholder="Mensaje descriptivo" required name="Message"></p>
+                    <p>
+                        <button id="btnAddDonation" class="w3-button w3-black w3-padding-large" type="submit">
+                            <i class="fa fa-paper-plane"></i> Enviar
+                        </button>
+                    </p>
+                </form>
+            }
+            <div id="donationLblMessage"></div>
+            <div id="loading">
+                <img src="~/Images/loader.gif" />
+            </div>
+            <!-- End Contact Section -->
+        </div>
+    </section>
+    <section>
+        <div class="w3-padding-large w3-content w3-light-grey" id="contact">
             <h2>Contactanos</h2>
             <hr style="width:200px" class="w3-opacity">
 
@@ -439,21 +491,214 @@
                 <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: cenovi@gmail.com</p>
             </div><br>
             <p>Rellena el formulario para una consulta:</p>
-
-            <form action="/action_page.php" target="_blank">
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Asunto" required name="Subject"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Mensaje" required name="Message"></p>
-                <p>
-                    <button class="w3-button w3-black w3-padding-large" type="submit">
-                        <i class="fa fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                </p>
-            </form>
+            @using (Html.BeginForm())
+            {
+                <form action="/action_page.php" target="_blank">
+                    <p><input id="queryTxtName" class="w3-input w3-padding-16" type="text" placeholder="Nombre" required name="Name"></p>
+                    <p><input id="queryTxtMail" class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input id="queryTxtSubject" class="w3-input w3-padding-16" type="text" placeholder="Asunto" required name="Subject"></p>
+                    <p><input id="queryTxtMessage" class="w3-input w3-padding-16" type="text" placeholder="Mensaje" required name="Message"></p>
+                    <p>
+                        <button id="btnAddQuery" class="w3-button w3-black w3-padding-large" type="submit">
+                            <i class="fa fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </p>
+                </form>
+            }
+            <div id="queryLblMessage"></div>
+            <div id="loading">
+                <img src="~/Images/loader.gif" />
+            </div>
             <!-- End Contact Section -->
         </div>
     </section>
+
 </div>
 
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $('#btnAddQuery').on("click", function () {
+                var queryName = $('#queryTxtName').val();
+                if (queryName == "") {
+                    $('#queryLblMessage').html('Debe ingresar un nombre...');
+                    return false;
+                }
+                var queryMail = $('#queryTxtMail').val();
+                if (queryMail == "") {
+                    $('#queryLblMessage').html('Debe ingresar un E-Mail...');
+                    return false;
+                }
+                var querySubject = $('#queryTxtSubject').val();
+                if (querySubject == "") {
+                    $('#queryLblMessage').html('Debe ingresar un asunto...');
+                    return false;
+                }
+                var queryMessage = $('#queryTxtMessage').val();
+                if (queryMessage == "") {
+                    $('#queryLblMessage').html('Debe ingresar un mensaje...');
+                    return false;
+                }
 
+                var query = new Object();
+                query.Date = "2000-01-01T00:00:00";
+                query.Name = $('#queryTxtName').val();
+                query.Email = $('#queryTxtMail').val();
+                query.Subject = $('#queryTxtSubject').val();
+                query.Message = $('#queryTxtMessage').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'api/QueriesAPI',
+                    data: query,
+                    dataType: 'json',
+                    cache: false,
+                    success: function (data) {
+                        var outPut = '';
+                        outPut += '<hr/>Mensaje enviado<br/>';
+                        outPut += '<b>Fecha Consulta: <b/>' + query.Date + '<br/>';
+                        outPut += '<b>Nombre: <b/>' + query.Name + '<br/>';
+                        outPut += '<b>Email: <b/>' + query.Email + '<br/>';
+                        outPut += '<b>Asunto Consulta: <b/>' + query.Subject + '<br/>';
+                        outPut += '<b>Mensaje Consulta: <b/>' + query.Message + '<br/>';
+                        $('#queryLblMessage').html(outPut);
+                    },
+                    error: function (hxr, ajaxOptions, throwError) {
+                        $('#queryLblMessage').html('Error!');
+                    }
+                });
+                return false;
+            });
+
+            $('#btnAddVoluntary').on("click", function () {
+                var volutaryName = $('#volutaryName').val();
+                if (volutaryName == "") {
+                    $('#volutaryLblMessage').html('Debe ingresar un nombre...');
+                    return false;
+                }
+                var volutaryEmail = $('#volutaryEmail').val();
+                if (volutaryEmail == "") {
+                    $('#volutaryLblMessage').html('Debe ingresar un E-Mail...');
+                    return false;
+                }
+                var volutaryPhone = $('#volutaryPhone').val();
+                if (volutaryPhone == "") {
+                    $('#volutaryLblMessage').html('Debe ingresar un telefono...');
+                    return false;
+                }
+                var volutaryMessage = $('#volutaryMessage').val();
+                if (volutaryMessage == "") {
+                    $('#volutaryLblMessage').html('Debe ingresar un mensaje...');
+                    return false;
+                }
+
+                var voluntary = new Object();
+                voluntary.Date = "2000-01-01T00:00:00";
+                voluntary.Name = $('#volutaryName').val();
+                voluntary.Email = $('#volutaryEmail').val();
+                voluntary.Phone = $('#volutaryPhone').val();
+                voluntary.Message = $('#volutaryMessage').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'api/VoluntariesAPI',
+                    data: voluntary,
+                    dataType: 'json',
+                    cache: false,
+                    success: function (data) {
+                        var outPut = '';
+                        outPut += '<hr/>Mensaje enviado<br/>';
+                        outPut += '<b>Fecha: <b/>' + voluntary.Date + '<br/>';
+                        outPut += '<b>Nombre: <b/>' + voluntary.Name + '<br/>';
+                        outPut += '<b>Email: <b/>' + voluntary.Email + '<br/>';
+                        outPut += '<b>Telefono: <b/>' + voluntary.Phone + '<br/>';
+                        outPut += '<b>Mensaje: <b/>' + voluntary.Message + '<br/>';
+                        $('#volutaryLblMessage').html(outPut);
+                    },
+                    error: function (hxr, ajaxOptions, throwError) {
+                        $('#volutaryLblMessage').html('Error!');
+                    }
+                });
+                return false;
+            });
+
+            $('#btnAddDonation').on("click", function () {
+                var donationName = $('#donationName').val();
+                if (donationName == "") {
+                    $('#donationLblMessage').html('Debe ingresar un nombre...');
+                    return false;
+                }
+                var donationEmail = $('#donationEmail').val();
+                if (donationEmail == "") {
+                    $('#donationLblMessage').html('Debe ingresar un E-Mail...');
+                    return false;
+                }
+                var donationAmount = $('#donationAmount').val();
+                if (donationAmount == "") {
+                    $('#donationLblMessage').html('Debe ingresar un monto...');
+                    return false;
+                }
+                var donationMessage = $('#donationMessage').val();
+                if (donationMessage == "") {
+                    $('#donationLblMessage').html('Debe ingresar un mensaje...');
+                    return false;
+                }
+
+                var donation = new Object();
+                donation.Date = "2000-01-01T00:00:00";
+                donation.Name = $('#donationName').val();
+                donation.Email = $('#donationEmail').val();
+                donation.Amount = $('#donationAmount').val();
+                donation.Message = $('#donationMessage').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'api/DonationsAPI',
+                    data: donation,
+                    dataType: 'json',
+                    cache: false,
+                    success: function (data) {
+                        var outPut = '';
+                        outPut += '<hr/>Mensaje enviado<br/>';
+                        outPut += '<b>Fecha: <b/>' + donation.Date + '<br/>';
+                        outPut += '<b>Nombre: <b/>' + donation.Name + '<br/>';
+                        outPut += '<b>Email: <b/>' + donation.Email + '<br/>';
+                        outPut += '<b>Monto: <b/>' + donation.Subject + '<br/>';
+                        outPut += '<b>Mensaje: <b/>' + donation.Message + '<br/>';
+                        $('#donationLblMessage').html(outPut);
+                    },
+                    error: function (hxr, ajaxOptions, throwError) {
+                        $('#donationLblMessage').html('Error!');
+                    }
+                });
+                return false;
+            });
+            $(document).ajaxStart(function () {
+                $("#loading").show();
+            });
+            $(document).ajaxStop(function () {
+                $("#loading").hide();
+            });
+        });
+    </script>
+}
+
+<style type="text/css">
+    #loading {
+        display: none;
+        background-color: grey;
+        z-index: 999999;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 300px;
+        filter: alpha(opacity=75);
+        -khtml-opacity: 0.75;
+        -moz-opacity: 0.75;
+        opacity: 0.75;
+    }
+</style>

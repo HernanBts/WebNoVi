@@ -14,6 +14,7 @@ namespace WebNoVi.Controllers
 
         public ActionResult Index()
         {
+            
             IndexSPAView indexSPAView = new IndexSPAView();
 
             List<Story> storiesList= new List<Story>();
