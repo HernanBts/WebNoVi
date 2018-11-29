@@ -67,7 +67,22 @@
         right: 0;
     }
 
+@media screen and (max-width: 800px) {
 
+    .buttonacctsidebar {
+        right: 0;
+        top: 5%;
+        background-color: #f1f1f1;
+        position: fixed;
+        overflow: auto;
+    }
+
+    .buttonacctsidebar img {
+        border-radius: 15px;
+        top: 5%;
+        right: 0;
+    }
+}
 
 .fuentegrande p {
     font-size: 25px;

@@ -3,6 +3,10 @@
     padding-bottom: 20px;
         
 }
+h1.maintittle {
+    margin-top: 2em;
+}
+
     div.contenido {
         margin-left: 20%;
         margin-right: 20%;
