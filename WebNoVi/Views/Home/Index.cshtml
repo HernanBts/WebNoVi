@@ -64,140 +64,13 @@
 
 <div>
 
-    <h1 class="w3-row w3-center" style="margin-top:2em;">
-        <span class="w3-hide-small">Bienvenidos al </span>CE.NO.VI.!
+    <h1 class="w3-row w3-center" style="margin-top:1em;">
+        <span class="w3-hide-small">Bienvenidos al </span>
     </h1>
+    <img src="~/Images/cenovilogo.png" width="815" height="197" style="display:block;margin-left:auto;margin-right:auto" />
     <hr>
-    <section class="w3-row w3-center w3-padding-16 w3-section">
-        <h3>Testimonios</h3>
-        <table class="table w3-light-grey">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Stories[1].Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Stories[1].Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Stories[1].Hour)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Stories[1].Description)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Body)
-                    </th>*@
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model.Stories)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hour)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Body)
-                        </td>*@
-                </tr>
-            }
-
-        </table>
-        <h3>Noticias</h3>
-        <table class="table w3-light-grey">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.News[1].Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.News[1].Date)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.News[1].Hour)
-                    </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.News[1].Resume)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.News[1].Image)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.News[1].Body)
-                    </th>*@
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model.News)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Hour)
-                        </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Resume)
-                    </td>
-                    <td>
-                        <img width="100" src="@Url.Action("getImage", "News", new { id=item.NewId })" />
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Body)
-                        </td>*@
-                </tr>
-            }
-        </table>
-        <h3>Herramientas</h3>
-        <table class="table w3-light-grey">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tools[1].Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tools[1].Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tools[1].Link)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model.Tools)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Link)
-                    </td>
-                </tr>
-            }
-        </table>
-    </section>
-
-    <section id="home">
-        <hr>
-    </section>
 
     <section id="sobrenosotros" class="w3-padding-large w3-content w3-light-grey bold-headers">
-        <hr>
         <h3>CE.NO.VI.</h3>
         <p>
             El 25 de Julio de 1975 un grupo muy joven de hombres y mujeres no videntes, se reunieron en Resistencia por inicativa del señor Roberto Emilio Toullieux, para ejercer juntos desde la ceguera el derecho supremo de ciudadania, dando nacimiento al Centro Social, Recreativo y Cultural para No Videntes y Ambliopes CE.NO.VI.
@@ -227,6 +100,140 @@
         </p>
         <h4>Expansion Territorial</h4>
         <p>La gran cantidad de niños ciegos y disminuidos visuales del interior de la provincia, que junto a sus padres se esfuerzan y sacrifican, para viajar durante mas de 5 o 6 horas hasta la Sede Central a recibir los servicios que necesitan, y fatigados viajar la misma cantidad de horas de regreso a sus hogares; escuchar insistentemente el reclamo de las fuerzas vivas e Intendentes Municipales de muchos pueblos y parajes, motivó al CE.NO.VI. a emprender la historica decision de incorporar filiales.</p>
+    </section>
+
+    <section id="testimonios" class="w3-row w3-center w3-padding-16 w3-section">
+        <h3>Testimonios</h3>
+        <table class="table w3-light-grey">
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        Lista de Testimonios
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Hour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Description)
+                        </th>*@
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Body)
+                        </th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Stories)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hour)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" id="discripcion">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Body)
+                            </td>*@
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>Noticias</h3>
+        <table class="table w3-light-grey">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Date)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.News[1].Hour)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Resume)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.News[1].Image)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.News[1].Body)
+                    </th>*@
+
+            </tr>
+
+            @foreach (var item in Model.News)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Hour)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Resume)
+                    </td>
+                    <td>
+                        <img width="100" src="@Url.Action("getImage", "News", new { id=item.NewId })" />
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Body)
+                        </td>*@
+                </tr>
+            }
+        </table>
+        <h3>Herramientas</h3>
+        <table class="">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tools[1].Link)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model.Tools)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Link)
+                    </td>
+                </tr>
+            }
+        </table>
+    </section>
+
+    <section id="home">
+        <hr>
     </section>
     <section id="calendario">
         <hr>
@@ -330,7 +337,7 @@
             nulla.
         </p>
     </section>
-    
+
     <section id="voluntariado">
         <div class="w3-padding-large w3-content w3-light-grey" id="contact">
             <h2>Voluntariado</h2>

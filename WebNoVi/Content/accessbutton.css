@@ -4,7 +4,7 @@
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 5px;
     right: 0;
     background-color: #111;
     overflow-x: hidden;
@@ -71,7 +71,7 @@
 
     .buttonacctsidebar {
         right: 0;
-        top: 5%;
+        top: 25%;
         background-color: #f1f1f1;
         position: fixed;
         overflow: auto;
@@ -141,4 +141,30 @@ a-high  {
     color: #fff;
     font-size: 48px;
     margin: 0 0 24px;
+}
+
+
+/*tables style*/
+#testimonios th {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#testimonios td {
+    margin: 2em;
+    background-color:white;
+}
+#descripcion {
+    height: 5em;
+    background-color:blue;
+}
+
+
+#testimonios table {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 5px;
 }
