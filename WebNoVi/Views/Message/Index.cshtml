@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+                @Html.ActionLink("Borar", "Delete", "Queries", new { id = item.QueryId })
             </td>
             @*<td>
             @Html.DisplayFor(modelItem => item.Body)
@@ -102,7 +102,7 @@
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.VoluntaryId })
+                @Html.ActionLink("Borrar", "Delete", "Voluntaries", new { id = item.VoluntaryId })
             </td>
         </tr>
         }
@@ -147,7 +147,7 @@
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.DonationId })
+                @Html.ActionLink("Borrar", "Delete", "Donations", new { id = item.DonationId })
             </td>
         </tr>
         }
