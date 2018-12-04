@@ -67,7 +67,7 @@ namespace WebNoVi.Controllers
             
             return View(messagesView);
         }
-
+        /*
         // GET: Message/Details/5
         public ActionResult Details(int id)
         {
@@ -139,7 +139,7 @@ namespace WebNoVi.Controllers
                 return View();
             }
         }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)
