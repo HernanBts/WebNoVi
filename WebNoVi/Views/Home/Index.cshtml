@@ -205,9 +205,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Tools[1].Title)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Tools[1].Description)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Tools[1].Link)
                 </th>
@@ -223,7 +223,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
-                    <td>
+                </tr>
+                <tr>
+                    <td colspan="2">
                         @Html.DisplayFor(modelItem => item.Link)
                     </td>
                 </tr>
@@ -231,8 +233,35 @@
         </table>
     </section>
 
-    <section id="home">
+    <section id="services">
+
         <hr>
+        <div class="w3-padding-large w3-content w3-light-grey" id="servicios">
+            <h2>Servicios Sociales Gratuitos</h2>
+            <p>Los servicios gratuitos que ofrece el CE.NO.VI. se dividen en cinco grupos diferenciados: Rehabilitacion, Educacion, Trabajo, Cultura, Cultura y Asistencia. La totalidad de todos estos servicios son gratuitos y también se encuentran disponibles en todas las filiales del CE.NO.VI.</p>
+            <hr style="width:200px" class="w3-opacity">
+            <h3>Rehabilitacion</h3>
+            <ul>
+                <li>Educacion sensoperceptual </li>
+                <li>Integracion </li>
+                <li>Roles del educando, educadores y padres</li>
+                <li>Tecnicas de orientacion</li>
+                <li>Tecnicas de movilidad</li>
+                <li>Tecnicas para el uso del baston blanco</li>
+                <li>Actividades del diario vivir</li>
+                <li>Tecnicas para realizar las actividades del diario vivir</li>
+                <li>Dominio del espacio</li>
+                <li>Adquisicion de modelos postulantes y sociales que permitan la convivencia</li>
+                <li>Proceso de adquisicion de los apredizajes</li>
+                <li>Intercambio con los compañeros, estimulo para el trabajo grupal</li>
+            </ul>
+            <h3>Educacion</h3>
+            <h3>Trabajo</h3>   
+            <h3>Cultura</h3>   
+            <h3>Asistencia</h3>   
+
+        </div>
+
     </section>
     <section id="calendario">
         <hr>
