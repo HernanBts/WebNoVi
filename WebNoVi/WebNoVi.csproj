@@ -213,6 +213,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\QueriesAPIController.cs" />
     <Compile Include="Controllers\QueriesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\StoriesController.cs" />
     <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -222,6 +223,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="ModelView\AccountViewModels.cs" />
     <Compile Include="Models\CenoviContext.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -380,6 +382,11 @@
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

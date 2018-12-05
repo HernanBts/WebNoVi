@@ -14,29 +14,56 @@ namespace WebNoVi.Controllers
 
         public ActionResult Index()
         {
-            
             IndexSPAView indexSPAView = new IndexSPAView();
 
-            List<Story> storiesList= new List<Story>();
-            var stories = db.Stories.ToList();
-            foreach (var story in stories)
+            List<Service> services = new List<Service>();
+            var service = db.Services.ToList();
+            foreach (var item in service)
+            {
+                var servicesSiew = new Service
+                {
+                    Title = item.Title,
+                    Resume = item.Resume,
+                    Image = item.Image
+                };
+                services.Add(servicesSiew);
+            }
+
+            List<Event> events = new List<Event>();
+            var @event = db.Events.ToList();
+            foreach (var item in @event)
+            {
+                var eventView = new Event
+                {
+                    Title = item.Title,
+                    Date = item.Date,
+                    Hour = item.Hour,
+                    Description = item.Description,
+                    Image = item.Image
+                };
+                events.Add(eventView);
+            }
+
+            List<Story> stories= new List<Story>();
+            var story = db.Stories.ToList();
+            foreach (var item in story)
             {
                 var storyView = new Story
                 {
-                    Title = story.Title,
-                    Description = story.Description,
-                    Body = story.Body,
-                    Date = story.Date,
-                    Hour = story.Hour,
-                    Comment = story.Comment,
-                    StoryId = story.StoryId
+                    Title = item.Title,
+                    Description = item.Description,
+                    Body = item.Body,
+                    Date = item.Date,
+                    Hour = item.Hour,
+                    Comment = item.Comment,
+                    StoryId = item.StoryId
                 };
-                storiesList.Add(storyView);
+                stories.Add(storyView);
             }
 
-            List<New> newsList = new List<New>();
-            var news = db.News.ToList();
-            foreach (var item in news)
+            List<New> news = new List<New>();
+            var @new = db.News.ToList();
+            foreach (var item in @new)
             {
                 var newView = new New
                 {
@@ -48,12 +75,12 @@ namespace WebNoVi.Controllers
                     Image = item.Image,
                     NewId = item.NewId
                 };
-                newsList.Add(newView);
+                news.Add(newView);
             }
 
-            List<Tool> toolsList = new List<Tool>();
-            var tools = db.Tools.ToList();
-            foreach (var item in tools)
+            List<Tool> tools = new List<Tool>();
+            var tool = db.Tools.ToList();
+            foreach (var item in tool)
             {
                 var toolView = new Tool
                 {
@@ -61,11 +88,14 @@ namespace WebNoVi.Controllers
                     Description = item.Description,
                     Link = item.Link
                 };
-                toolsList.Add(toolView);
+                tools.Add(toolView);
             }
-            indexSPAView.Stories = storiesList;
-            indexSPAView.News = newsList;
-            indexSPAView.Tools = toolsList;
+
+            indexSPAView.Services = services;
+            indexSPAView.Events = events;
+            indexSPAView.Stories = stories;
+            indexSPAView.News = news;
+            indexSPAView.Tools = tools;
 
             return View(indexSPAView);
         }
