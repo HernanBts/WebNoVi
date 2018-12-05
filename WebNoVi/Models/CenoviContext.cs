@@ -40,5 +40,7 @@ namespace WebNoVi.Models
         public System.Data.Entity.DbSet<WebNoVi.Models.Voluntary> Voluntaries { get; set; }
 
         public System.Data.Entity.DbSet<WebNoVi.Models.Donation> Donations { get; set; }
+
+        public System.Data.Entity.DbSet<WebNoVi.Models.Service> Services { get; set; }
     }
 }
