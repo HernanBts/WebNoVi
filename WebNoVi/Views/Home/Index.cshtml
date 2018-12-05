@@ -65,8 +65,11 @@
 <div role="main">
 
     <h1 class="w3-row w3-center" style="margin-top:1em;"></h1>
+
     <img src="~/Images/cenovilogo.png" width="815" height="197" style="display:block;margin-left:auto;margin-right:auto" alt="Logo del CENOVI" />
+    <h5 class="w3-row w3-left"><p id="climasimple"></p></h5>
     <hr>
+
 
     <section id="sobrenosotros" class="w3-padding-large w3-content w3-light-grey bold-headers">
         <h3>CE.NO.VI.</h3>
@@ -242,20 +245,20 @@
                         Lista de Testimonios
                     </th>
                     @*<th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Title)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Date)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Hour)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Description)
-                    </th>*@
+                            @Html.DisplayNameFor(model => model.Stories[1].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Hour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stories[1].Description)
+                        </th>*@
                     @*<th>
-                        @Html.DisplayNameFor(model => model.Stories[1].Body)
-                    </th>*@
+                            @Html.DisplayNameFor(model => model.Stories[1].Body)
+                        </th>*@
                 </tr>
             </thead>
             <tbody>
@@ -277,8 +280,8 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         @*<td>
-                            @Html.DisplayFor(modelItem => item.Body)
-                        </td>*@
+                                @Html.DisplayFor(modelItem => item.Body)
+                            </td>*@
                     </tr>
                 }
             </tbody>
