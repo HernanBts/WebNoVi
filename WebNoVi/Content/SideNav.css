@@ -142,9 +142,14 @@ div.content {
     float:right;
 }
 .btnadm {
-    margin-left: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
-.rubiklogo {
-    float: right;
+#futer{
+    display:inline-grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background-color:black;
 }
