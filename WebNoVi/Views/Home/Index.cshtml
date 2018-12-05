@@ -67,6 +67,14 @@
     <h1 class="w3-row w3-center">
         <span class="w3-hide-small">Bienvenidos al </span>CE.NO.VI!
     </h1>
+    <h7 class="w3-row w3-left"><p id="climasimple"></p></h7>
+    <script>
+    $(document).ready(function () {
+        $.get("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20u=%27c%27%20and%20woeid%20%3D%20466870&format=json", function (response) {
+            $("#climasimple").text("La temperatura actual en Resistencia es de: " + response.query.results.channel.item.condition.temp + "°C");
+        });
+    });
+    </script>
     <hr>
     <section class="w3-row w3-center w3-padding-16 w3-section">
         <h3>Testimonios</h3>
