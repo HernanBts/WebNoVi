@@ -226,6 +226,8 @@
                     window.location.hash = hash;
                 });
             });
+
+
             //$(".buttonacctsidebar").click(function openNav() {
             //    document.getElementById("mySidenav").style.width = "250px";
             //});
@@ -245,13 +247,20 @@
             //});
         });
         $(document).ready(function () {
-
+            var textSpanish = "Estado: ";
             $.get("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20u=%27c%27%20and%20woeid%20%3D%20466870&format=json", function (response) {
-                if (response.query.results.channel.item.condition.text == "Mostly Sunny") {
-                    var textSpanish = "Soleado";
+                var state = response.query.results.channel.item.condition.text;
+                if (state == "Mostly Sunny") {
+                    textSpanish += "soleado.";
+                } else if (state == "Partly Cloudy") {
+                    textSpanish += "nublado.";
+                }
+                else {
+                    textSpanish += "indefinido.";
                 }
                 $("#climasimple").text("La temperatura actual en Resistencia es de: " + response.query.results.channel.item.condition.temp + "°C. " + textSpanish.toString());
             });
+
         });
         
     </script>

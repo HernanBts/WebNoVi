@@ -67,7 +67,7 @@
     <h1 class="w3-row w3-center" style="margin-top:1em;"></h1>
 
     <img src="~/Images/cenovilogo.png" width="815" height="197" style="display:block;margin-left:auto;margin-right:auto" alt="Logo del CENOVI" />
-    <h5 class="w3-row w3-left"><p id="climasimple"></p></h5>
+    <h7 class="w3-row w3-left"><p id="climasimple"></p></h7>
     <hr>
 
 
@@ -296,8 +296,8 @@
                     @Html.DisplayNameFor(model => model.Tools[1].Title)
                 </th>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.Tools[1].Description)
-                </th>*@
+                        @Html.DisplayNameFor(model => model.Tools[1].Description)
+                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Tools[1].Link)
                 </th>
@@ -777,12 +777,12 @@
                 });
                 return false;
             });
-            $(document).ajaxStart(function () {
-                $("#loading").show();
-            });
-            $(document).ajaxStop(function () {
-                $("#loading").hide();
-            });
+            //$(document).ajaxStart(function () {
+            //    $("#loading").show();
+            //});
+            //$(document).ajaxStop(function () {
+            //    $("#loading").hide();
+            //});
         });
     </script>
 }
