@@ -147,9 +147,3 @@ div.content {
     margin-right: auto;
     
 }
-
-#futer{
-    display:inline-grid;
-    grid-template-columns:1fr 1fr 1fr;
-    background-color:black;
-}
