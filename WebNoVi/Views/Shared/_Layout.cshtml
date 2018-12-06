@@ -19,7 +19,7 @@
 
     <div id="accbut" class="buttonacctsidebar">
         <a  href="javascript:void(0)" onclick="openNav()">
-            <img src="~/Images/accesibilidad.png" width="100" height="100" alt=" a inicio" />
+            <img src="~/Images/accesibilidad.png" width="70" height="70" alt=" a inicio" />
         </a>
 
 
@@ -30,12 +30,12 @@
             <a href="javascript:void(0)" id="btnHighContrast" onclick="highContrast()">Contraste Negro</a>
             <a href="javascript:void(0)" id="btnLowContrast" onclick="lowContrast()">Contraste Blanco</a>
 
-            <a href="#">Links en color amarillo</a>
+            @*<a href="#">Links en color amarillo</a>
             <a href="#">Links de color normal</a>
             <a href="#">Modo en escala de grises</a>
             <a href="#">Modo de colores regulares</a>
             <a href="#">Links subrayados</a>
-            <a href="#">Links por defecto</a>
+            <a href="#">Links por defecto</a>*@
         </div>
     </div>
 
@@ -54,15 +54,16 @@
             <i class="fas fa-calendar fa-3x"></i>
             <p>Eventos</p>
         </a>
+
+        <a href="#noticias" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            @*<img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
+            <i class="fas fa-newspaper fa-3x"></i>
+            <p>Noticias</p>
+        </a>
         <a href="#herramientas" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
             @*<img src="~/Images/HerryApps.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
             <i class="fas fa-toolbox fa-3x"></i>
             <p>Apps</p>
-        </a>
-        <a href="#voluntariado" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-            @*<img src="~/Images/voluntariado.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
-            <i class="fas fa-coins fa-3x"></i>
-            <p>Donar</p>
         </a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
             @*<img src="~/Images/contactanos.png" style="width:100%" class="fa fa-user w3-xxlarge">*@
@@ -82,11 +83,11 @@
             <a href="#calendario" class="w3-bar-item w3-button" style="width:16% !important">
                 <i class="fas fa-calendar fa-2x"></i>
             </a>
+            <a href="#noticias" class="w3-bar-item w3-button" style="width:16% !important">
+                <i class="fas fa-newspaper fa-2x"></i>
+            </a>
             <a href="#herramientas" class="w3-bar-item w3-button" style="width:16% !important">
                 <i class="fas fa-toolbox fa-2x"></i>
-            </a>
-            <a href="#voluntariado" class="w3-bar-item w3-button" style="width:16% !important">
-                <i class="fas fa-coins fa-2x"></i>
             </a>
             <a href="#contact" class="w3-bar-item w3-button" style="width:16% !important">
                 <i class="fas fa-mail-bulk fa-2x"></i>
@@ -160,7 +161,7 @@
             else {
                 e.style.width = '250px';
             }
-                   }
+        }
 
         //document.getElementById("closemySidenav").addEventListener("click",closeNav);
         function setActiveAccesibility() {
