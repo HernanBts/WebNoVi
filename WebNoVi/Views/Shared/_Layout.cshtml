@@ -19,24 +19,24 @@
 <body class="">
 
     <div id="accbut" class="buttonacctsidebar">
-        <a  href="javascript:void(0)" onclick="openNav()">
+        <a href="javascript:void(0)" onclick="openNav()">
             <img src="~/Images/accesibilidad.png" width="70" height="70" alt=" a inicio" />
         </a>
 
 
         <div id="mySideAcc" class="rightsideAcc">
             <a href="javascript:void(0)" id="closemySideAcc" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="javascript:void(0)" id="btnFuenteNormal" class="active-accesibility"  onclick="añadirFuenteNormal()">Fuente normal</a>
+            <a href="javascript:void(0)" id="btnFuenteNormal" class="active-accesibility" onclick="añadirFuenteNormal()">Fuente normal</a>
             <a href="javascript:void(0)" id="btnFuenteGrande" onclick="añadirFuenteGrande()">Fuente grande</a>
             <a href="javascript:void(0)" id="btnHighContrast" onclick="highContrast()">Contraste Negro</a>
             <a href="javascript:void(0)" id="btnLowContrast" onclick="lowContrast()">Contraste Blanco</a>
 
             @*<a href="#">Links en color amarillo</a>
-            <a href="#">Links de color normal</a>
-            <a href="#">Modo en escala de grises</a>
-            <a href="#">Modo de colores regulares</a>
-            <a href="#">Links subrayados</a>
-            <a href="#">Links por defecto</a>*@
+                <a href="#">Links de color normal</a>
+                <a href="#">Modo en escala de grises</a>
+                <a href="#">Modo de colores regulares</a>
+                <a href="#">Links subrayados</a>
+                <a href="#">Links por defecto</a>*@
         </div>
     </div>
 
@@ -129,123 +129,10 @@
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 
-    <script>
-        //document.getElementById("accbut").addEventListener("click",openNav);
-        function openNav() {
-            var e = document.getElementById("mySideAcc");
-            if (e.style.width == '250px') {
-                e.style.width = '0px';
-            }
-            else {
-                e.style.width = '250px';
-            }
-        }
-
-        //document.getElementById("closemySidenav").addEventListener("click",closeNav);
-        function setActiveAccesibility() {
-            if (document.querySelector('#content').contains(document.querySelector('.highContrast'))) {
-                document.querySelector('body').classList.add('w3-black');
-            } else {
-                document.querySelector('body').classList.remove('w3-black');
-            }
-           
-            if (document.querySelector('#content').contains(document.querySelector('.fuentegrande'))) {
-                document.getElementById("btnFuenteGrande").classList.add("active-accesibility");
-                document.getElementById("btnFuenteNormal").classList.remove("active-accesibility");
-            }
-            else {
-                document.getElementById("btnFuenteGrande").classList.remove("active-accesibility");
-                document.getElementById("btnFuenteNormal").classList.add("active-accesibility");
-            }
-            if (document.querySelector('#content').contains(document.querySelector('.highContrast'))) {
-                document.getElementById("btnHighContrast").classList.add("active-accesibility");
-                document.getElementById("btnLowContrast").classList.remove("active-accesibility");
-            }
-            else {
-                document.getElementById("btnHighContrast").classList.remove("active-accesibility");
-                document.getElementById("btnLowContrast").classList.add("active-accesibility");
-            }
-            closeNav();
-        }
-
-        function closeNav() {
-            document.getElementById("mySideAcc").style.width = "0";
-        }
-        function añadirFuenteGrande() {
-            document.getElementById("content").classList.add("fuentegrande");
-            setActiveAccesibility();
-        }
-        function añadirFuenteNormal() {
-            document.getElementById("content").classList.remove("fuentegrande");
-            setActiveAccesibility();
-        }
-        function highContrast() {
-            document.getElementById("content").classList.add("highContrast");
-            setActiveAccesibility();
-        }
-        function lowContrast() {
-            document.getElementById("content").classList.remove("highContrast");
-            setActiveAccesibility();
-        }
-        
-        $(document).ready(function () {
-            $("a.añadir").click(function () {
-                $("p").addClass("test");
-            });
-            $("a.quitar").click(function () {
-                $("p").removeClass("test");
-            });
-            $('.nav-button').click(function (event) {
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function () {
-
-                    window.location.hash = hash;
-                });
-            });
-
-
-            //$(".buttonacctsidebar").click(function openNav() {
-            //    document.getElementById("mySidenav").style.width = "250px";
-            //});
-            //$(".closebtn").click(function closeNav() {
-            //    document.getElementById("mySidenav").style.width = "0px";
-            //});
-
-            //fuentes
-            //$("#btnFuenteGrande").click(function fuenteGrande() {
-            //    $(".contenido").addClass("big-font");
-            //});
-            //$("#btnFuenteNormal").click(function fuenteNormal() {
-            //    $(".contenido").removeClass("big-font");
-            //});
-            //$("#btnHighContrast").click(function highContrast() {
-            //    $(".contenido").addClass("body");
-            //});
-        });
-        $(document).ready(function () {
-            var textSpanish = "Estado: ";
-            $.get("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20u=%27c%27%20and%20woeid%20%3D%20466870&format=json", function (response) {
-                var state = response.query.results.channel.item.condition.text;
-                if (state == "Mostly Sunny") {
-                    textSpanish += "soleado.";
-                } else if (state == "Partly Cloudy") {
-                    textSpanish += "nublado.";
-                }
-                else {
-                    textSpanish += "indefinido.";
-                }
-                $("#climasimple").text("La temperatura actual en Resistencia es de: " + response.query.results.channel.item.condition.temp + "°C. " + textSpanish.toString());
-            });
-
-        });
-        
-    </script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    <script src="~/Scripts/layout.js"></script>
+    <script src="~/Scripts/index.js" type="text/javascript"></script>
 </body>
 
 </html>
