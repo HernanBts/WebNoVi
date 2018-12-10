@@ -112,7 +112,7 @@ namespace WebNoVi.Controllers
             Donation donation = db.Donations.Find(id);
             db.Donations.Remove(donation);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../Message/index");
         }
 
         protected override void Dispose(bool disposing)

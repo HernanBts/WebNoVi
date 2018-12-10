@@ -1,4 +1,5 @@
 ﻿@model  WebNoVi.ModelView.MessageViewModel
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Index";
@@ -26,8 +27,8 @@
                 @Html.DisplayNameFor(model => model.Queries[1].Message)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.Stories[1].Body)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.Stories[1].Body)
+                </th>*@
             <th></th>
         </tr>
 
@@ -49,9 +50,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Message)
             </td>
+            @if (Request.IsAuthenticated)
+            {
             <td>
-                @Html.ActionLink("Borar", "Delete", "Queries", new { id = item.QueryId })
+                <p class="">
+                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                    <a href="@Url.Action("Delete", "Queries", new { id = item.QueryId })" title="Borrar">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                    </a>
+                </p>
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+                @Html.ActionLink("Borrar", "Delete", "Queries", new { id = item.QueryId })*@
             </td>
+            }
             @*<td>
             @Html.DisplayFor(modelItem => item.Body)
         </td>*@
@@ -78,33 +89,38 @@
                 @Html.DisplayNameFor(model => model.Voluntaries[1].Message)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.News[1].Body)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.News[1].Body)
+                </th>*@
             <th></th>
         </tr>
 
         @foreach (var item in Model.Voluntaries)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Message)
-            </td>
-            <td>
-                @Html.ActionLink("Borrar", "Delete", "Voluntaries", new { id = item.VoluntaryId })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    <p class="">
+                        @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                        <a href="@Url.Action("Delete", "Voluntaries", new { id = item.VoluntaryId })" title="Borrar">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </p>
+                </td>
+            </tr>
         }
     </table>
     <h3>Herramientas</h3>
@@ -130,26 +146,30 @@
 
         @foreach (var item in Model.Donations)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Message)
-            </td>
-            <td>
-                @Html.ActionLink("Borrar", "Delete", "Donations", new { id = item.DonationId })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    <p class="">
+                        <a href="@Url.Action("Delete", "Donations", new { id = item.DonationId })" title="Borrar">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </p>
+                </td>
+            </tr>
         }
     </table>
 </section>

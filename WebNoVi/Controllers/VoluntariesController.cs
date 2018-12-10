@@ -112,7 +112,7 @@ namespace WebNoVi.Controllers
             Voluntary voluntary = db.Voluntaries.Find(id);
             db.Voluntaries.Remove(voluntary);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../Message/index");
         }
 
         protected override void Dispose(bool disposing)

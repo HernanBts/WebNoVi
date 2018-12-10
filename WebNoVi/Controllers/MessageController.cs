@@ -23,6 +23,7 @@ namespace WebNoVi.Controllers
             {
                 var queryView = new Query
                 {
+                    QueryId = query.QueryId,
                     Date = query.Date,
                     Name = query.Name,
                     Subject = query.Subject,
@@ -38,6 +39,7 @@ namespace WebNoVi.Controllers
             {
                 var voluntaryView = new Voluntary
                 {
+                    VoluntaryId = item.VoluntaryId,
                     Date = item.Date,
                     Name = item.Name,
                     Email = item.Email,
@@ -53,6 +55,7 @@ namespace WebNoVi.Controllers
             {
                 var onationView = new Donation
                 {
+                    DonationId = item.DonationId,
                     Date = item.Date,
                     Name = item.Name,
                     Email = item.Email,
@@ -140,6 +143,7 @@ namespace WebNoVi.Controllers
             }
         }
         */
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
