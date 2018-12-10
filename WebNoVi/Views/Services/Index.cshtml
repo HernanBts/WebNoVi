@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<WebNoVi.Models.Service>
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de servicios</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Agregar servicio", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -23,23 +27,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Resume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ServiceId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ServiceId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ServiceId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resume)
+            </td>
+            <td>
+                <img width="100" src="@Url.Action("getImage", "Services", new { id=item.ServiceId })" />
+                @*@Html.DisplayFor(modelItem => item.Image)*@
+            </td>
+            @if (Request.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ServiceId }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.ServiceId })
+                </td>
+            }
+        </tr>
+    }
 
 </table>

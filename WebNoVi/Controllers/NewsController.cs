@@ -142,7 +142,7 @@ namespace WebNoVi.Controllers
 
         public ActionResult getImage(int id)
         {
-            New news = db.News.Find(id);
+            @New news = db.News.Find(id);
             byte[] byteImage = news.Image;
 
             MemoryStream memoryStream = new MemoryStream(byteImage);

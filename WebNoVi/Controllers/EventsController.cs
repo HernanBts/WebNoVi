@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebNoVi.Models;
 
@@ -48,6 +52,12 @@ namespace WebNoVi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EventId,Title,Hour,Date,Description,Image")] Event @event)
         {
+            HttpPostedFileBase Filebase = Request.Files[0];
+
+            WebImage image = new WebImage(Filebase.InputStream);
+
+            @event.Image = image.GetBytes();
+
             if (ModelState.IsValid)
             {
                 db.Events.Add(@event);
@@ -59,6 +69,7 @@ namespace WebNoVi.Controllers
         }
 
         // GET: Events/Edit/5
+        [Authorize(Roles = "Edit")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +91,17 @@ namespace WebNoVi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "EventId,Title,Hour,Date,Description,Image")] Event @event)
         {
+            byte[] image = null;
+            HttpPostedFileBase Filebase = Request.Files[0];
+            if (Filebase == null)
+            {
+                image = db.Events.SingleOrDefault(e => e.EventId == @event.EventId).Image;
+            }
+            else
+            {
+                WebImage wImage = new WebImage(Filebase.InputStream);
+                @event.Image = wImage.GetBytes();
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(@event).State = EntityState.Modified;
@@ -113,6 +135,21 @@ namespace WebNoVi.Controllers
             db.Events.Remove(@event);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult getImage(int id)
+        {
+            @Event events = db.Events.Find(id);
+            byte[] byteImage = events.Image;
+
+            MemoryStream memoryStream = new MemoryStream(byteImage);
+            Image image = Image.FromStream(memoryStream);
+
+            memoryStream = new MemoryStream();
+            image.Save(memoryStream, ImageFormat.Jpeg);
+            memoryStream.Position = 0;
+
+            return File(memoryStream, "image.jpeg");
         }
 
         protected override void Dispose(bool disposing)
