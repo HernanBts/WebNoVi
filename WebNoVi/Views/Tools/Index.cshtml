@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de Herramientas</h2>
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Agregar Herramienta", "Create")
     </p>
 }
     <table class="table">
