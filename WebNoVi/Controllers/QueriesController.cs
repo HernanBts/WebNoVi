@@ -112,7 +112,7 @@ namespace WebNoVi.Controllers
             Query query = db.Queries.Find(id);
             db.Queries.Remove(query);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../Message/index");
         }
 
         protected override void Dispose(bool disposing)
