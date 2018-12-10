@@ -95,7 +95,7 @@ $(document).ready(function () {
     //});
 });
 $(document).ready(function () {
-    var textSpanish = "Estado: ";
+    var textSpanish = "";
     $.get("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20u=%27c%27%20and%20woeid%20%3D%20466870&format=json", function (response) {
         var state = response.query.results.channel.item.condition.code;
         if (state == "0") {
@@ -245,7 +245,7 @@ $(document).ready(function () {
         else {
             textSpanish += "no tenemos información disponible.";
         }
-        $("#climasimple").text("La temperatura actual en Resistencia es de: " + response.query.results.channel.item.condition.temp + "°C. " + textSpanish.toString());
+        $("#climasimple").text("La temperatura actual en Resistencia es de: " + response.query.results.channel.item.condition.temp + "°C, " + textSpanish.toString());
     });
 
 });
