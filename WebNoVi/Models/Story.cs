@@ -36,6 +36,9 @@ namespace WebNoVi.Models
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Body { get; set; }
 
+        [Display(Name = "Imagen:")]
+        public byte[] Image { get; set; }
+
         public virtual ICollection<Comment> Comment { get; set; }
     }
 }

@@ -7,8 +7,10 @@
 <div role="main">
 
     <h1 class="w3-row w3-center" style="margin-top:1em;"></h1>
-
-    <img src="~/Images/cenovilogo.png" width="815" height="197" style="display:block;margin-left:auto;margin-right:auto" alt="Logo del CENOVI" />
+    <div class="cenovi-logo">
+        <img class="logo" src="~/Images/cenovilogo.png" width="815" height="197" style="display:block;margin-left:auto;margin-right:auto" alt="Logo del CENOVI"/>
+    </div>
+    
     <hr style="width:90%" class="w3-opacity">
     <p class="w3-center bold-headers" id="climasimple"></p>
     <hr style="width:90%" class="w3-opacity">
@@ -116,8 +118,8 @@
                         <p><span class="w3-large w3-margin-right">@Html.DisplayFor(modelItem => item.Date) - @Html.DisplayFor(modelItem => item.Hour)</span>| @Html.DisplayFor(modelItem => item.Title)</p>
                     </th>
                     @*<th style="background-color:#00695c">
-                        <p>IR</p>
-                    </th>*@
+                            <p>IR</p>
+                        </th>*@
                 </tr>
 
                 <tr>
@@ -133,12 +135,12 @@
                         </div>
                     </td>
                     @*<td>
-                        <p class="">
-                            <a href="@Url.Action("Details", "Events", new { id = item.EventId })" title="ver testimonio">
-                                <i class="fas fa-arrow-circle-right fa-2x" style="color:#00695c"></i>
-                            </a>
-                        </p>
-                    </td>*@
+                            <p class="">
+                                <a href="@Url.Action("Details", "Events", new { id = item.EventId })" title="ver testimonio">
+                                    <i class="fas fa-arrow-circle-right fa-2x" style="color:#00695c"></i>
+                                </a>
+                            </p>
+                        </td>*@
                 </tr>
             }
 
@@ -164,7 +166,7 @@
             {
                 <tr>
                     <th class="w3-black">
-                        <p>@Html.DisplayFor(modelItem => item.Title) | @Html.DisplayFor(modelItem => item.Date) - @Html.DisplayFor(modelItem => item.Hour)</p>
+                        <p> @Html.DisplayFor(modelItem => item.Date) | @Html.DisplayFor(modelItem => item.Title)</p>
                     </th>
                     <th class="w3-black">
                         <p>IR</p>
@@ -213,11 +215,11 @@
             {
                 <tr class="w3-black">
                     <th style="background-color:#00695c">
-                        <p>@Html.DisplayFor(modelItem => item.Title) | @Html.DisplayFor(modelItem => item.Date)</p>
+                        <p>@Html.DisplayFor(modelItem => item.Date) | @Html.DisplayFor(modelItem => item.Title)</p>
                     </th>
                     @*<th class="w3-black">
-                        <p>IR</p>
-                    </th>*@
+                            <p>IR</p>
+                        </th>*@
                 </tr>
 
                 <tr>
@@ -232,12 +234,12 @@
                         </div>
                     </td>
                     @*<td>
-                        <p class="">
-                            <a href="@Url.Action("Details", "Stories", new { id = item.StoryId })" title="ver testimonio">
-                                <i class="fas fa-arrow-circle-right fa-2x"></i>
-                            </a>
-                        </p>
-                    </td>*@
+                            <p class="">
+                                <a href="@Url.Action("Details", "Stories", new { id = item.StoryId })" title="ver testimonio">
+                                    <i class="fas fa-arrow-circle-right fa-2x"></i>
+                                </a>
+                            </p>
+                        </td>*@
                 </tr>
             }
         </table>
@@ -258,24 +260,24 @@
             <h1 class="w3-center">Herramientas</h1>
             @foreach (var item in Model.Tools)
             {
-            <div class="w3-third w3-section">
-                <i class="fas fa-wrench fa-5x"></i>
-                <h3>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </h3>
-                <h4>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </h4>
-                <h5>
-                    <a style="text-decoration:none" href="https://@Html.DisplayFor(modelItem => item.Link)">Ir</a>
-                </h5>
+                <div class="w3-third w3-section">
+                    <i class="fas fa-wrench fa-5x"></i>
+                    <h3>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </h3>
+                    <h4>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </h4>
+                    <h5>
+                        <a style="text-decoration:none" href="https://@Html.DisplayFor(modelItem => item.Link)">Ir</a>
+                    </h5>
 
-                <p class="">
-                    <a href="@Url.Action("Details", "Tools", new { id = item.ToolId })" title="ver testimonio">
-                        <i class="fas fa-arrow-circle-right fa-2x"></i>
-                    </a>
-                </p>
-            </div>
+                    <p class="">
+                        <a href="@Url.Action("Details", "Tools", new { id = item.ToolId })" title="ver testimonio">
+                            <i class="fas fa-arrow-circle-right fa-2x"></i>
+                        </a>
+                    </p>
+                </div>
             }
             <hr class="w3-light-grey" />
 
@@ -303,7 +305,7 @@
                 @using (Html.BeginForm())
                 {
                     <form action="/action_page.php" target="_blank">
-                        <p><input id="volutaryName" class="w3-input w3-padding-16 w3-light-grey"  type="text" placeholder="Nombre" required name="Name"></p>
+                        <p><input id="volutaryName" class="w3-input w3-padding-16 w3-light-grey" type="text" placeholder="Nombre" required name="Name"></p>
                         <p><input id="volutaryEmail" class="w3-input w3-padding-16 w3-light-grey" type="text" placeholder="Email" required name="Email"></p>
                         <p><input id="volutaryPhone" class="w3-input w3-padding-16 w3-light-grey" type="text" placeholder="Telefono" required name="Subject"></p>
                         <p><input id="volutaryMessage" class="w3-input w3-padding-16 w3-light-grey" type="text" placeholder="Mensaje descriptivo" required name="Message"></p>

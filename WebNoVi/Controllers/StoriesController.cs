@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebNoVi.Models;
 
@@ -48,8 +52,14 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
+        public ActionResult Create([Bind(Include = "StoryId,Title,Date,Hour,Description,Body,Image")] Story story)
         {
+            HttpPostedFileBase Filebase = Request.Files[0];
+
+            WebImage image = new WebImage(Filebase.InputStream);
+
+            story.Image = image.GetBytes();
+
             if (ModelState.IsValid)
             {
                 db.Stories.Add(story);
@@ -81,8 +91,19 @@ namespace WebNoVi.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StoryId,Title,Date,Hour,Description,Body")] Story story)
+        public ActionResult Edit([Bind(Include = "StoryId,Title,Date,Hour,Description,Body,Image")] Story story)
         {
+            byte[] image = null;
+            HttpPostedFileBase Filebase = Request.Files[0];
+            if (Filebase == null)
+            {
+                image = db.Stories.SingleOrDefault(s => s.StoryId == story.StoryId).Image;
+            }
+            else
+            {
+                WebImage wImage = new WebImage(Filebase.InputStream);
+                story.Image = wImage.GetBytes();
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(story).State = EntityState.Modified;
@@ -123,6 +144,21 @@ namespace WebNoVi.Controllers
             {
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult getImage(int id)
+        {
+            Story stories = db.Stories.Find(id);
+            byte[] byteImage = stories.Image;
+
+            MemoryStream memoryStream = new MemoryStream(byteImage);
+            Image image = Image.FromStream(memoryStream);
+
+            memoryStream = new MemoryStream();
+            image.Save(memoryStream, ImageFormat.Jpeg);
+            memoryStream.Position = 0;
+
+            return File(memoryStream, "image.jpeg");
         }
 
         protected override void Dispose(bool disposing)

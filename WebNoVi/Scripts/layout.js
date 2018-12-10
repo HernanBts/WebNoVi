@@ -14,8 +14,10 @@ function openNav() {
 function setActiveAccesibility() {
     if (document.querySelector('#content').contains(document.querySelector('.highContrast'))) {
         document.querySelector('body').classList.add('w3-black');
+        $('.cenovi-logo .logo').attr('src', 'images/cenovilogoBlack.png');
     } else {
         document.querySelector('body').classList.remove('w3-black');
+        $('.cenovi-logo .logo').attr('src', 'images/cenovilogo.png');
     }
 
     if (document.querySelector('#content').contains(document.querySelector('.fuentegrande'))) {
