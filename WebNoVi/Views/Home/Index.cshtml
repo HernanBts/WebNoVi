@@ -79,27 +79,30 @@
                 </p>
             </div>
         </div>
-
-        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-            <h1 class="w3-center">Servicios</h1>
+        <hr style="width:200px" class="w3-opacity">
+        <div class="w3-row w3-center w3-padding-large w3-section w3-light-grey">
+            <h1>Servicios</h1>
             @foreach (var item in Model.Services)
             {
-                <div class="w3-third w3-section">
+                <div class="w3-third w3-section w3-center">
                     <i class="fas fa-universal-access fa-5x"></i>
                     <h3>
                         @Html.DisplayFor(modelItem => item.Title)
                     </h3>
-                    <h4>
-                        @Html.DisplayFor(modelItem => item.Resume)
-                    </h4>
-
-                    <p class="">
-                        <a href="@Url.Action("Details", "Services", new { id = item.ServiceId })" title="ver testimonio">
-                            <i class="fas fa-arrow-circle-right fa-2x"></i>
-                        </a>
-                    </p>
+                    @*<p class="">
+                    <a href="@Url.Action("Details", "Services", new { id = item.ServiceId })" title="servicio">
+                        <i class="fas fa-arrow-circle-right fa-2x"></i> <span><br />Ingresar!</span>
+                    </a>
+                </p>*@
                 </div>
             }
+            <hr class="w3-light-grey" />
+            <div class="w3-center">
+                <a style="text-decoration:none" href="@Url.Action("Index", "Services")" title="todos los servicios">
+                    <i class="fas fa-arrow-circle-right fa-3x"></i>
+                    <p>Lista completa!</p>
+                </a>
+            </div>
         </div>
         <hr style="width:200px" class="w3-opacity">
     </section>
@@ -251,15 +254,13 @@
                     <h3>
                         @Html.DisplayFor(modelItem => item.Title)
                     </h3>
-                    <h4>
+                    @*<h4>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </h4>
-                    <h5>
-                        <a style="text-decoration:none" href="https://@Html.DisplayFor(modelItem => item.Link)">Ir</a>
-                    </h5>
+                    </h4>*@
+
 
                     <p class="">
-                        <a href="@Url.Action("Details", "Tools", new { id = item.ToolId })" title="ver testimonio">
+                        <a href="@Url.Action("Details", "Tools", new { id = item.ToolId })" title="ingresar a herramienta">
                             <i class="fas fa-arrow-circle-right fa-2x"></i>
                         </a>
                     </p>
