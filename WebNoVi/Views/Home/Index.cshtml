@@ -159,50 +159,36 @@
     <!-- Start News Section -->
 
     <section id="news" class="w3-padding-large w3-section">
-        <h1 class="w3-center">Noticias</h1>
-        <table class="table w3-light-grey">
-
+        <div class="w3-row w3-center w3-padding-large w3-section w3-light-grey">
+            <h1 class="w3-center">Noticias</h1>
             @foreach (var item in Model.News)
             {
-                <tr>
-                    <th class="w3-black">
-                        <p> @Html.DisplayFor(modelItem => item.Date) | @Html.DisplayFor(modelItem => item.Title)</p>
-                    </th>
-                    <th class="w3-black">
-                        <p>IR</p>
-                    </th>
-                </tr>
-                <tr class="w3-white">
-                    <td>
-                        <div class="w3-black">
-                            <img src="@Url.Action("getImage", "News", new { id = item.NewId })" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-                        </div>
-                        <div>
-                            <p class="">
-                                @Html.DisplayFor(modelItem => item.Resume)
-                            </p>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="">
-                            <a href="@Url.Action("Details", "News", new { id = item.NewId })" title="ver noticia">
-                                <i class="fas fa-arrow-circle-right fa-2x"></i>
-                            </a>
-                        </p>
-                    </td>
-                </tr>
-            }
+                <div class="w3-third w3-section w3-center">
+                    <h3>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </h3>
+                    <img src="@Url.Action("getImage", "News", new { id = item.NewId })" alt="Avatar" class="w3-center w3-circle" style="width:80px;height:80px">
+                    <br />
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Resume)
+                    </p>
 
-        </table>
-        <br /><br />
-        <div class="w3-center">
-            <a style="text-decoration:none" href="@Url.Action("Index", "News")" title="todos las noticias">
-                <i class="fas fa-arrow-circle-right fa-3x"></i>
-                <p>Lista completa!</p>
-            </a>
+
+                    <p class="">
+                        <a href="@Url.Action("Details", "News", new { id = item.NewId })" title="ver noticia">
+                            <i class="fas fa-arrow-circle-right fa-2x"></i>
+                        </a>
+                    </p>
+                </div>
+            }
+            <div>
+                <a style="text-decoration:none" href="@Url.Action("Index", "News")" title="todos las noticias">
+                    <i class="fas fa-arrow-circle-right fa-3x"></i>
+                    <p>Lista completa!</p>
+                </a>
+            </div>
         </div>
         <hr style="width:200px" class="w3-opacity">
-
     </section>
 
     <!-- End News Section -->
