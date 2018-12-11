@@ -11,11 +11,13 @@ namespace WebNoVi.Controllers
     public class HomeController : Controller
     {
         private CenoviContext db = new CenoviContext();
+        private int sizeOfListsPulls = 3;
 
         public ActionResult Index()
         {
+            int cn = 0;
             IndexSPAView indexSPAView = new IndexSPAView();
-
+            
             List<Service> services = new List<Service>();
             var service = db.Services.ToList();
             foreach (var item in service)
@@ -30,9 +32,13 @@ namespace WebNoVi.Controllers
             }
 
             List<Event> events = new List<Event>();
-            var @event = db.Events.ToList();
+            var @event = db.Events.OrderByDescending(i => i.Date).ToList();
             foreach (var item in @event)
             {
+                if(sizeOfListsPulls == cn)
+                {
+                    break;
+                }
                 var eventView = new Event
                 {
                     Title = item.Title,
@@ -42,12 +48,18 @@ namespace WebNoVi.Controllers
                     Image = item.Image
                 };
                 events.Add(eventView);
+                cn++;
             }
 
+            cn = 0;
             List<Story> stories= new List<Story>();
-            var story = db.Stories.ToList();
+            var story = db.Stories.OrderByDescending(i => i.Date).ToList();
             foreach (var item in story)
             {
+                if (sizeOfListsPulls == cn)
+                {
+                    break;
+                }
                 var storyView = new Story
                 {
                     Title = item.Title,
@@ -59,12 +71,18 @@ namespace WebNoVi.Controllers
                     StoryId = item.StoryId
                 };
                 stories.Add(storyView);
+                cn++;
             }
 
+            cn = 0;
             List<New> news = new List<New>();
-            var @new = db.News.ToList();
+            var @new = db.News.OrderByDescending(i => i.Date).ToList();
             foreach (var item in @new)
             {
+                if (sizeOfListsPulls == cn)
+                {
+                    break;
+                }
                 var newView = new New
                 {
                     Title = item.Title,
@@ -76,10 +94,13 @@ namespace WebNoVi.Controllers
                     NewId = item.NewId
                 };
                 news.Add(newView);
+                cn++;
             }
 
+            cn = 0;
             List<Tool> tools = new List<Tool>();
             var tool = db.Tools.ToList();
+            
             foreach (var item in tool)
             {
                 var toolView = new Tool
