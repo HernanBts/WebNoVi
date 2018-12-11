@@ -41,6 +41,7 @@ namespace WebNoVi.Controllers
                 }
                 var eventView = new Event
                 {
+                    EventId = item.EventId,
                     Title = item.Title,
                     Date = item.Date,
                     Hour = item.Hour,
