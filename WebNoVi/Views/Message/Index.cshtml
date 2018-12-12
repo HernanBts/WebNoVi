@@ -34,39 +34,39 @@
 
         @foreach (var item in Model.Queries)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Message)
-            </td>
-            @if (Request.IsAuthenticated)
-            {
-            <td>
-                <p class="">
-                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
-                    <a href="@Url.Action("Delete", "Queries", new { id = item.QueryId })" title="Borrar">
-                        <i class="fas fa-trash-alt fa-2x"></i>
-                    </a>
-                </p>
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
-                @Html.ActionLink("Borrar", "Delete", "Queries", new { id = item.QueryId })*@
-            </td>
-            }
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>*@
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                @if (Request.IsAuthenticated)
+                {
+                    <td>
+                        <p class="">
+                            @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                            <a href="@Url.Action("Delete", "Queries", new { id = item.QueryId })" title="Borrar">
+                                <i class="fas fa-trash-alt fa-2x"></i>
+                            </a>
+                        </p>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+                            @Html.ActionLink("Borrar", "Delete", "Queries", new { id = item.QueryId })*@
+                    </td>
+                }
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>*@
+            </tr>
         }
 
     </table>

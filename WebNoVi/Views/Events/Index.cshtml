@@ -10,7 +10,7 @@
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Agregar evento", "Create")
+        @Html.ActionLink("Agregar evento", "Create", new { }, new { @class = "btn btn-success" })
     </p>
 }
 <table class="table">
@@ -55,8 +55,18 @@
             @if (Request.IsAuthenticated)
             {
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.EventId }) |
-                    @Html.ActionLink("Borrar", "Delete", new { id = item.EventId })
+                    <p class="">
+                        @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                        <a href="@Url.Action("Edit", "Events", new { id = item.EventId })" title="Editar">
+                            <i class="fas fa-edit fa-2x"></i>
+                        </a>
+                    </p>
+                    <p class="">
+                        @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                        <a href="@Url.Action("Delete", "Events", new { id = item.EventId })" title="Borrar">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </p>
                 </td>
             }
         </tr>

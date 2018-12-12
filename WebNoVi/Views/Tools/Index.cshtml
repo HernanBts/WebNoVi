@@ -8,7 +8,7 @@
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Agregar Herramienta", "Create")
+        @Html.ActionLink("Agregar Herramienta", "Create", new { }, new { @class = "btn btn-success" })
     </p>
 }
     <table class="table">
@@ -27,25 +27,34 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            @if (Request.IsAuthenticated)
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    <p class="">
+                        @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                        <a href="@Url.Action("Edit", "Tools", new { id = item.ToolId })" title="Editar">
+                            <i class="fas fa-edit fa-2x"></i>
+                        </a>
+                    </p>
+                    <p class="">
+                        @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                        <a href="@Url.Action("Delete", "Tools", new { id = item.ToolId })" title="Borrar">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </p>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Link)
-                </td>
-                @if (Request.IsAuthenticated)
-                {
-                    <td>
-
-                        @Html.ActionLink("Editar", "Edit", new { id = item.ToolId }) |
-                        @Html.ActionLink("Borrar", "Delete", new { id = item.ToolId })
-                    </td>
-                }
-            </tr>
+            }
+        </tr>
         }
 
     </table>

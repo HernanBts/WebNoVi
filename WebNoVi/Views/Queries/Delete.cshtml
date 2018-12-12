@@ -4,11 +4,9 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
 
 <h3>Realmente desea eliminar esta consulta?</h3>
 <div>
-    <h4>Consulta</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -56,9 +54,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver al Listado", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver", "Index", "Home", new { }, new { @class = "btn btn-success" })
+    </div>
     }
 </div>

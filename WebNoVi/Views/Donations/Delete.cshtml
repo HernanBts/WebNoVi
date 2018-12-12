@@ -4,8 +4,6 @@
     ViewBag.Title = "Borrar";
 }
 
-<h2>Borrar</h2>
-
 <h3>Realmente desea eliminar este elemento?</h3>
 <div>
     <h4>Donación</h4>
@@ -56,9 +54,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Borrar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver a la Lista", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver", "Index", "Home", new { }, new { @class = "btn btn-success" })
+    </div>
     }
 </div>

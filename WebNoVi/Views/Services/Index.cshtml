@@ -10,7 +10,7 @@
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Agregar servicio", "Create")
+        @Html.ActionLink("Agregar servicio", "Create", new { }, new { @class = "btn btn-success" })
     </p>
 }
 <table class="table">
@@ -29,25 +29,35 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resume)
+        </td>
+        <td>
+            <img width="100" src="@Url.Action("getImage", "Services", new { id=item.ServiceId })" />
+            @*@Html.DisplayFor(modelItem => item.Image)*@
+        </td>
+        @if (Request.IsAuthenticated)
+        {
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                <p class="">
+                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                    <a href="@Url.Action("Edit", "News", new { id = item.ServiceId })" title="Editar">
+                        <i class="fas fa-edit fa-2x"></i>
+                    </a>
+                </p>
+                <p class="">
+                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                    <a href="@Url.Action("Delete", "News", new { id = item.ServiceId })" title="Borrar">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                    </a>
+                </p>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Resume)
-            </td>
-            <td>
-                <img width="100" src="@Url.Action("getImage", "Services", new { id=item.ServiceId })" />
-                @*@Html.DisplayFor(modelItem => item.Image)*@
-            </td>
-            @if (Request.IsAuthenticated)
-            {
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.ServiceId }) |
-                    @Html.ActionLink("Borrar", "Delete", new { id = item.ServiceId })
-                </td>
-            }
-        </tr>
+        }
+    </tr>
     }
 
 </table>

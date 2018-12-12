@@ -9,7 +9,7 @@
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Agregar", "Create")
+        @Html.ActionLink("Agregar", "Create", new { }, new { @class = "btn btn-success" })
     </p>
 }
 <table class="table">
@@ -37,35 +37,45 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                <img width="100" src="@Url.Action("getImage", "Stories", new { id=item.StoryId })" />
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>
+        <td>
+            <img width="100" src="@Url.Action("getImage", "Stories", new { id=item.StoryId })" />
 
-                @*@Html.DisplayFor(modelItem => item.Image)*@
+            @*@Html.DisplayFor(modelItem => item.Image)*@
+        </td>
+        @if (Request.IsAuthenticated)
+        {
+            <td>
+                <p class="">
+                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                    <a href="@Url.Action("Edit", "Stories", new { id = item.StoryId })" title="Editar">
+                        <i class="fas fa-edit fa-2x"></i>
+                    </a>
+                </p>
+                <p class="">
+                    @*@Html.ActionLink("Borrar", "../Queries/Delete", new { id = item.QueryId }, new { @class = "btn btn-danger" })*@
+                    <a href="@Url.Action("Delete", "Stories", new { id = item.StoryId })" title="Borrar">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                    </a>
+                </p>
             </td>
-            @if (Request.IsAuthenticated)
-            {
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.StoryId }) |
-                    @Html.ActionLink("Borrar", "Delete", new { id = item.StoryId })
-                </td>
-            }
-        </tr>
+        }
+    </tr>
     }
 
 </table>

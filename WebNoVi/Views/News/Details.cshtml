@@ -7,7 +7,6 @@
 <h2>Detalles</h2>
 
 <div>
-    <h4>Noticia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -51,16 +50,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
+        <dd class="form-group">
+            <img width="100" src="@Url.Action("getImage", "News", new { id=Model.NewId })" />
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.NewId }) |
-    @Html.ActionLink("Volver al Listado", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.NewId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-success" })
 </p>
