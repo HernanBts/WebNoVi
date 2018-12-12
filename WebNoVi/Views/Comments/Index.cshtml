@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebNoVi.Models.Comment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cometarios";
 }
 
-<h2>Index</h2>
+<h2>Comenentarios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear neuevo Comentario", "Create")
 </p>
 <table class="table">
     <tr>
@@ -55,9 +55,9 @@
         @if (Request.IsAuthenticated)
         {
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+                @Html.ActionLink("Editar", "Edit", new { id = item.CommentId }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.CommentId }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.CommentId })
             </td>
         }
         </tr>
