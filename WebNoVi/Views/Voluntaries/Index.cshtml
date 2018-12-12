@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebNoVi.Models.Voluntary>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Voluntarios";
 }
 
-<h2>Index</h2>
+<h2>Voluntarios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Nuevo Voluntario", "Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Message)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VoluntaryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VoluntaryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VoluntaryId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.VoluntaryId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.VoluntaryId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.VoluntaryId })
         </td>
     </tr>
 }

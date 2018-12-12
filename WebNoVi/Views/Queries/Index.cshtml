@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebNoVi.Models.Query>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Consultas";
 }
 
-<h2>Index</h2>
+<h2>Consultas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar Nueva Consulta", "Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Message)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.QueryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.QueryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.QueryId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.QueryId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.QueryId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.QueryId })
         </td>
     </tr>
 }

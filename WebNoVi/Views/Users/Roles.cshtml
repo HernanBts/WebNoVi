@@ -8,7 +8,7 @@
 
 <p>
     @Html.ActionLink("Agregar Rol", "AddRole", new { userId = Model.UserId }, new { @class = "btn btn-primary" })
-    @Html.ActionLink("Atras", "Index", new { } , new { @class = "btn btn-success" })
+    @Html.ActionLink("Atrás", "Index", new { } , new { @class = "btn btn-success" })
 </p>
 <table class="table">
 
@@ -19,7 +19,7 @@
                 @Html.DisplayFor(modelItem => Model.Roles[i].Name)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", new { userId = Model.UserId, roleId = Model.Roles[i].RoleId })
+                @Html.ActionLink("Eliminar", "Delete", new { userId = Model.UserId, roleId = Model.Roles[i].RoleId })
             </td>
         </tr>
     }
