@@ -24,6 +24,7 @@ namespace WebNoVi.Controllers
             {
                 var servicesSiew = new Service
                 {
+                    ServiceId = item.ServiceId,
                     Title = item.Title,
                     Resume = item.Resume,
                     Image = item.Image
@@ -106,6 +107,7 @@ namespace WebNoVi.Controllers
             {
                 var toolView = new Tool
                 {
+                    ToolId = item.ToolId,
                     Title = item.Title,
                     Description = item.Description,
                     Link = item.Link
